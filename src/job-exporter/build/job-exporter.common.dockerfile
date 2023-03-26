@@ -29,11 +29,9 @@ RUN curl -SL https://download.docker.com/linux/static/stable/x86_64/docker-17.06
     apt-get update && apt-get install --no-install-recommends -y iftop lsof && \
     mkdir -p /job_exporter
 
-RUN curl -sL http://repo.radeon.com/rocm/apt/debian/rocm.gpg.key | apt-key add - && \
-    sh -c 'echo deb [arch=amd64] http://repo.radeon.com/rocm/apt/debian/ xenial main > /etc/apt/sources.list.d/rocm.list' && \
-    apt-get update && apt-get install --no-install-recommends -y rocm-smi && \
-    mkdir -p /opt/rocm && \
-    cp -R $(dpkg -L rocm-smi | grep bin$) /opt/rocm && \
+RUN wget -q -O - https://repo.radeon.com/rocm/rocm.gpg.key | apt-key add - && \
+    sh -c 'echo deb [arch=amd64] https://repo.radeon.com/rocm/apt/debian/ ubuntu main > /etc/apt/sources.list.d/rocm.list' && \
+    apt-get update && apt-get install --no-install-recommends -y rocm-smi-lib && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install prometheus_client twisted

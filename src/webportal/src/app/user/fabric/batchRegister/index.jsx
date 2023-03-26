@@ -45,7 +45,9 @@ const columnUsername = 'username';
 const columnPassword = 'password';
 const columnEmail = 'email';
 const columnAdmin = 'admin';
+const columnQuota = 'quota';
 const columnVC = 'virtual cluster';
+const columnAdditionalInformation = 'additionalInformation';
 
 export default function BatchRegister() {
   const [userInfos, setUserInfos] = useState([]);
@@ -74,7 +76,9 @@ export default function BatchRegister() {
         [columnPassword]: '111111',
         [columnEmail]: 'student1@outlook.com',
         [columnAdmin]: false,
+        [columnQuota]: 0,
         [columnVC]: 'default',
+        [columnAdditionalInformation]: '',
       },
     ]);
     const universalBOM = '\uFEFF';
@@ -108,6 +112,10 @@ export default function BatchRegister() {
     }
     if (fields.indexOf(columnPassword) === -1) {
       showMessageBox('Missing column of password in the CSV file!');
+      return false;
+    }
+    if (fields.indexOf(columnQuota) === -1) {
+      showMessageBox('Missing column of quota in the CSV file!');
       return false;
     }
     if (csvResult.errors.length > 0) {
@@ -216,6 +224,10 @@ export default function BatchRegister() {
         userInfo[columnPassword],
         toBool(userInfo[columnAdmin]),
         userInfo.vcs,
+        {
+          quota: userInfo.quota,
+          additionalInformation: userInfo.additionalInformation,
+        },
       )
         .then(() => {
           return successResult;

@@ -18,7 +18,7 @@
 import os
 import sys
 import time
-import common
+from . import common
 import readline
 import logging
 import logging.config
@@ -70,7 +70,7 @@ class kubectl_install:
         else:
             self.logger.warning("Unable to find the cluster configuration.")
             self.logger.warning("Please enter the required information, when prompted.")
-            user_input = raw_input("Please input the api-server (or the api servers' load-balancer) address in your cluster: ")
+            user_input = input("Please input the api-server (or the api servers' load-balancer) address in your cluster: ")
             dict_map = {
                 "cluster_cfg": { "kubernetes": {"api-servers-ip" : user_input} }
             }

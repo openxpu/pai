@@ -36,7 +36,7 @@ sudo docker run -itd \
         --privileged=true \
         --net=host \
         --name=dev-box-quick-start \
-        openpai/dev-box:${OPENPAI_IMAGE_TAG}
+        openxpu/dev-box:${OPENPAI_IMAGE_TAG}
 
 echo "Checking k8s installation..."
 sudo docker exec dev-box-quick-start kubectl get node

@@ -17,7 +17,7 @@
 
 import logging
 
-from paiLibrary.paiOrchestration import change_node
+from .paiLibrary.paiOrchestration import change_node
 
 
 class NodeCmd():

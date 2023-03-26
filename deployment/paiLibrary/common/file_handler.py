@@ -48,7 +48,7 @@ def dump_yaml_data(file_path, data):
 def read_template(template_path):
 
     with open(template_path, "r") as f:
-        template_data = f.read().decode('utf-8')
+        template_data = f.read()
 
     return template_data
 

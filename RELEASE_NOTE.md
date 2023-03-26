@@ -1,5 +1,11 @@
 # OpenPAI Release Note
 
+## Feb 2021 (version 1.8.2)
+
+- Update to support Ubuntu 18.04/20.04/22.04
+- Fix dead links
+- Build & release
+
 ## Dec 2021 (version 1.8.1)
 
 - Docker cache issues #5539 #5574

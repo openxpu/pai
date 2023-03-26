@@ -8,7 +8,7 @@ def update_nested_dict(dict_original, dict_update):
     """
     keep original key in nested dict if not present in the new dict
     """
-    for key, val in dict_update.iteritems():
+    for key, val in dict_update.items():
         if isinstance(val, collections.Mapping):
             dict_original[key] = update_nested_dict(dict_original.get(key, {}), val)
         else:

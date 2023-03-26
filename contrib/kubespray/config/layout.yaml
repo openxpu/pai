@@ -17,9 +17,9 @@ machine-sku:
       # and `enflame.com/dtu` is for Enflame DTU.
       # Reference: https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/
       type: nvidia.com/gpu
-      model: K80
+      model: A100
       count: 4
-    mem: 220Gi
+    mem: 240Gi
     cpu:
       vcore: 24
 

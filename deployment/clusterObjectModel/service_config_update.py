@@ -18,7 +18,7 @@
 import time
 import logging
 import logging.config
-import forward_compatibility
+from . import forward_compatibility
 from ..paiLibrary.common import file_handler
 from ..paiLibrary.common import directory_handler
 from ..paiLibrary.common import linux_shell

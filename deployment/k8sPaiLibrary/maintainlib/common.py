@@ -90,7 +90,7 @@ def execute_shell_return(shell_cmd, error_msg):
 def read_template(template_path):
 
     with open(template_path, "r") as fin:
-        template_data = fin.read().decode('utf-8')
+        template_data = fin.read()
 
     return template_data
 
@@ -310,7 +310,7 @@ def ssh_shell_with_password_input_paramiko(host_config, commandline):
     stdin, stdout, stderr = ssh.exec_command("echo '{0}' | {1}".format(password, commandline), get_pty=True)
     logger.info("Executing the command on host [{0}]: {1}".format(hostip, commandline))
     for response_msg in stdout:
-        print (response_msg.encode('utf-8').strip('\n'))
+        print(response_msg.encode('utf-8').strip('\n'))
 
     exit_code_ssh = stdout.channel.recv_exit_status()
     if exit_code_ssh != 0:

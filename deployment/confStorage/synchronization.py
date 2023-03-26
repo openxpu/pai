@@ -19,8 +19,8 @@ import os
 import logging
 import logging.config
 
-from external_version_control.external_config import getting_external_config
-from external_version_control.storage_factory import get_external_storage
+from .external_version_control.external_config import getting_external_config
+from .external_version_control.storage_factory import get_external_storage
 from .upload import UploadConfiguration
 from ..clusterObjectModel.service_config_update import ServiceConfigUpdate
 

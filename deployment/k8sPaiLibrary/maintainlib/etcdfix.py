@@ -23,7 +23,7 @@ import jinja2
 import argparse
 import paramiko
 import etcd
-import common
+from . import common
 import logging
 import logging.config
 

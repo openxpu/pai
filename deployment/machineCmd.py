@@ -23,16 +23,16 @@ import readline
 import logging
 import logging.config
 
-from k8sPaiLibrary.maintainlib import add as k8s_add
-from k8sPaiLibrary.maintainlib import remove as k8s_remove
-from k8sPaiLibrary.maintainlib import etcdfix as k8s_etcd_fix
-from k8sPaiLibrary.maintainlib import kubectl_conf_check
-from k8sPaiLibrary.maintainlib import kubectl_install
-from k8sPaiLibrary.maintainlib import update as k8s_update
+from .k8sPaiLibrary.maintainlib import add as k8s_add
+from .k8sPaiLibrary.maintainlib import remove as k8s_remove
+from .k8sPaiLibrary.maintainlib import etcdfix as k8s_etcd_fix
+from .k8sPaiLibrary.maintainlib import kubectl_conf_check
+from .k8sPaiLibrary.maintainlib import kubectl_install
+from .k8sPaiLibrary.maintainlib import update as k8s_update
 
 
-from paiLibrary.common import file_handler
-from clusterObjectModel.cluster_object_model import cluster_object_model
+from .paiLibrary.common import file_handler
+from .clusterObjectModel.cluster_object_model import cluster_object_model
 
 logger = logging.getLogger(__name__)
 
@@ -45,12 +45,12 @@ def kubectl_env_checking(cluster_object_mode):
         count_input = 0
 
         while True:
-            user_input = raw_input("Do you want to re-install kubectl by paictl? (Y/N) ")
+            user_input = input("Do you want to re-install kubectl by paictl? (Y/N) ")
 
             if user_input == "N":
                 count_quit = 0
                 while True:
-                    quit_or_not = raw_input("Do you want to quit by this operation? (Y/N) ")
+                    quit_or_not = input("Do you want to quit by this operation? (Y/N) ")
                     if quit_or_not == "Y":
                         return False
                     elif quit_or_not == "N":

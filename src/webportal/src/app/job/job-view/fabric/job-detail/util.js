@@ -38,6 +38,27 @@ export function isJobV2(rawJobConfig) {
   );
 }
 
+function count(o){
+  var t = typeof o;
+  if(t == 'string'){
+    return o.length;
+  } else if(t == 'object') {
+    var n = 0;
+    for(var i in o){
+      n++;
+    }
+    return n;
+  }
+  return false;
+}
+
+export function isJobSingle(rawJobConfig) {
+  return (
+    count(rawJobConfig.taskRoles) == 1
+  );
+}
+
+
 export function isClonable(rawJobConfig) {
   // disable clone for old yaml job
   if (isNil(rawJobConfig)) {
