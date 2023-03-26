@@ -59,7 +59,7 @@ export class JobTaskRole {
     this.commands = commands || '';
     this.completion = completion || new Completion({});
     this.deployment = deployment || new Deployment({});
-    this.hivedSku = hivedSku || { skuNum: 1, skuType: null, sku: null };
+    this.hivedSku = hivedSku || { skuNum: 1, skuType: null, skuPercent: 100, sku: null };
     this.containerSize = containerSize || getDefaultContainerSize();
     this.isContainerSizeEnabled = isContainerSizeEnabled || false;
     this.taskRetryCount = taskRetryCount || 0;
@@ -107,7 +107,7 @@ export class JobTaskRole {
       infiniband: get(taskRoleProtocol, 'extraContainerOptions.infiniband'),
     });
 
-    const hivedSku = { skuNum: 1, skuType: null, sku: null };
+    const hivedSku = { skuNum: 1, skuType: null, skuPercent: 100, sku: null };
     if (config.launcherScheduler === 'hivedscheduler') {
       hivedSku.skuNum = get(
         extras,
@@ -119,6 +119,12 @@ export class JobTaskRole {
         `hivedScheduler.taskRoles.${name}.skuType`,
         null,
       );
+      hivedSku.skuPercent = get(
+        extras,
+        `hivedScheduler.taskRoles.${name}.skuPercent`,
+        null,
+      );
+
     }
 
     const jobTaskRole = new JobTaskRole({
@@ -202,6 +208,7 @@ export class JobTaskRole {
       hivedTaskRole[this.name] = {
         skuNum: this.hivedSku.skuNum,
         skuType: this.hivedSku.skuType,
+        skuPercent: this.hivedSku.skuPercent,
       };
     }
 

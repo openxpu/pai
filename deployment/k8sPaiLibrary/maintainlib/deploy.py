@@ -22,8 +22,8 @@ import subprocess
 import jinja2
 import argparse
 import paramiko
-import common
-import kubectl_install
+from . import common
+from . import kubectl_install
 import logging
 import logging.config
 

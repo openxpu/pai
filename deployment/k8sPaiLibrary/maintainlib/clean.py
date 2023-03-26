@@ -17,7 +17,7 @@
 
 import os
 import sys
-import common
+from . import common
 import logging
 import logging.config
 

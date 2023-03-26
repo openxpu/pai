@@ -78,7 +78,7 @@ class UploadConfiguration:
             cluster_id = cluster_id_in_config
 
         # check user input cluster-id to avoid misoperation
-        user_input = raw_input("Please input the cluster-id which you wanna operate: ")
+        user_input = input("Please input the cluster-id which you wanna operate: ")
         if user_input != cluster_id:
             self.logger.error("Ops, maybe you find the wrong cluster. Please check your input and the target cluster.")
             sys.exit(1)

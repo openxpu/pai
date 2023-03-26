@@ -28,7 +28,7 @@ from ..monitorlib import servicestatus
 def service_status_check(label_key, label_value):
 
     if servicestatus.pod_is_ready_or_not(label_key, label_value) != True:
-        print "{0} is not ready yet!".format(label_value)
+        print("{0} is not ready yet!".format(label_value))
         sys.exit(1)
 
 
@@ -38,15 +38,15 @@ def waiting_until_service_ready(label_key, label_value, total_time=3600):
     while servicestatus.pod_is_ready_or_not(label_key, label_value) != True:
 
 
-        print "{0} is not ready yet. Please wait for a moment!".format(label_value)
+        print("{0} is not ready yet. Please wait for a moment!".format(label_value))
         time.sleep(10)
         total_time = total_time - 10
 
         if total_time < 0:
-            print "An issue occure when starting up {0}".format(label_value)
+            print("An issue occure when starting up {0}".format(label_value))
             sys.exit(1)
 
-    print "{0} is ready!".format(label_value)
+    print("{0} is ready!".format(label_value))
 
 
 

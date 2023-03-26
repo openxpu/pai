@@ -114,6 +114,24 @@ const checkUserStorage = async (username, storageName) => {
   return userStorages.includes(storageName);
 };
 
+const getUserQuota = async (username, filterDefault = -1) => {
+  const userItem = await getUser(username);
+  if ('quota' in userItem.extension) {
+    return userItem.extension.quota;
+  } else {
+    return filterDefault;
+  }
+};
+
+const getUserAdditionalInformation = async (username, filterDefault = null) => {
+  const userItem = await getUser(username);
+  if ('additionalInformation' in userItem.extension) {
+    return userItem.extension.additionalInformation;
+  } else {
+    return filterDefault;
+  }
+};
+
 // module exports
 module.exports = {
   getUser,
@@ -129,4 +147,6 @@ module.exports = {
   batchUpdateUsers,
   getUserStorages,
   checkUserStorage,
+  getUserQuota,
+  getUserAdditionalInformation,
 };

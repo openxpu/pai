@@ -16,7 +16,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-{% for key, host in cluster_cfg['layout']['machine-list'].iteritems() %}
+{% for key, host in cluster_cfg['layout']['machine-list'].items() %}
 
 {{ host['hostname'] }}:
     ip: {{ host['hostip'] }}

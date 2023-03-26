@@ -161,7 +161,7 @@ const getNodeResource = async () => {
             if (currOnNode.cellType in resourceUnits) {
               const gpuNumber = resourceUnits[currOnNode.cellType].gpu;
               if (currOnNode.cellHealthiness === 'Healthy') {
-                if (currOnNode.cellState === 'Used') {
+                if (currOnNode.cellState === 'Used' || currOnNode.CellState === 'HalfUsed') {
                   nodeResource[nodeName].gpuUsed += gpuNumber;
                 } else {
                   nodeResource[nodeName].gpuAvailable += gpuNumber;
@@ -252,7 +252,7 @@ const getVcList = async () => {
           if (curr.leafCellType in resourceUnits) {
             const sku = resourceUnits[curr.leafCellType];
             if (curr.cellHealthiness === 'Healthy') {
-              if (curr.cellState === 'Used') {
+              if (curr.cellState === 'Used' || curr.cellState === 'HalfUsed') {
                 mergeDict(vcInfos[vc].resourcesUsed, sku, add);
               }
               mergeDict(vcInfos[vc].resourcesGuaranteed, sku, add);

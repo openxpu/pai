@@ -5,7 +5,7 @@ import logging.config
 
 from deployment.utility.ssh import OpenPaiSSH
 from deployment.utility.sftp_copy import OpenPaiSftpCopy
-from clusterObjectModel.cluster_object_model import cluster_object_model
+from .clusterObjectModel.cluster_object_model import cluster_object_model
 
 logger = logging.getLogger(__name__)
 

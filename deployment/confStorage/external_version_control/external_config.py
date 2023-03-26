@@ -147,11 +147,11 @@ class uploading_external_config:
 
         if cluster_id is None:
             self.logger.warning("No cluster_id found in your cluster.")
-            user_input = raw_input("Please input the cluster-id for your cluster: ")
+            user_input = input("Please input the cluster-id for your cluster: ")
             conf_storage_util.update_cluster_id(self.kube_config_path, user_input)
             return False
 
-        user_input = raw_input("Please input the cluster-id which you wanna operate: ")
+        user_input = input("Please input the cluster-id which you wanna operate: ")
         if user_input != cluster_id:
             self.logger.error("Ops, maybe you find the wrong cluster. Please check your input and the target cluster.")
             sys.exit(1)

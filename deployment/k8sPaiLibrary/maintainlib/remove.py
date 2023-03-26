@@ -22,7 +22,7 @@ import subprocess
 import jinja2
 import argparse
 import paramiko
-import common
+from . import common
 import time
 import logging
 import logging.config

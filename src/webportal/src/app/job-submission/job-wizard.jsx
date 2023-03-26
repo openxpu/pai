@@ -70,9 +70,17 @@ const JobWizard = ({ setYamlText, history }) => {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('op') === 'resubmit') {
-      history.replace('/general');
+      if (params.get('single') === 'true') {
+        history.replace('/single');
+      } else {
+        history.replace('/general');
+      }
     } else if (!isNil(window.localStorage.getItem('marketItem'))) {
-      history.replace('/general');
+      if (params.get('single') === 'true') {
+        history.replace('/single');
+      } else {
+        history.replace('/general');
+      }
     } else {
       setLoading(false);
     }

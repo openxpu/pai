@@ -67,7 +67,7 @@ class OpenPaiSSH:
 
         count_input = 0
         while True:
-            user_input = raw_input("Do you want to continue this operation? (Y/N) ")
+            user_input = input("Do you want to continue this operation? (Y/N) ")
             if user_input == "N":
                 sys.exit(1)
             elif user_input == "Y":

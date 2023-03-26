@@ -9,6 +9,7 @@ cluster:
     docker-data-root: "{{ env['cfg']['docker_data_root'] | default('/mnt/docker') }}"
     prometheus-pushgateway: false
     marketplace: "{{ env["cfg"]["enable_marketplace"] | default('false') }}"
+    xpu-enabled: "{{ env["cfg"]["enable_xpu"] | default('true') }}"
 
   # the docker registry to store docker images that contain system services like frameworklauncher, hadoop, etc.
   docker-registry:

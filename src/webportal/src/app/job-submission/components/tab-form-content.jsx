@@ -92,6 +92,7 @@ export const TabFormContent = ({
       {(config.launcherScheduler === 'hivedscheduler' && (
         <HivedSkuSection
           value={jobTaskRole.hivedSku}
+          isSingle={isSingle}
           onChange={hivedSku => _onValueChange('hivedSku', hivedSku)}
         />
       )) || (
@@ -145,4 +146,5 @@ TabFormContent.propTypes = {
   onContentChange: PropTypes.func,
   advanceFlag: PropTypes.bool,
   isSingle: PropTypes.bool,
+  percent: PropTypes.number,
 };

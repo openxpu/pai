@@ -30,7 +30,7 @@ import {
 import c from 'classnames';
 import t from '../../../components/tachyons.scss';
 
-import { getVirtualCluster } from './utils';
+import { getVirtualCluster, getQuota, getAdditionalInformation } from './utils';
 
 import Context from './Context';
 import Ordering from './Ordering';
@@ -124,6 +124,18 @@ export default function Table() {
     isResizable: true,
   });
 
+  const quotaColumn = applySortProps({
+    key: 'quota',
+    minWidth: 60,
+    name: 'Quota',
+    className: FontClassNames.mediumPlus,
+    headerClassName: FontClassNames.medium,
+    isResizable: true,
+    onRender(user) {
+      return getQuota(user);
+    },
+  });
+
   const virtualClusterColumn = applySortProps({
     key: 'virtualCluster',
     minWidth: 250,
@@ -134,6 +146,18 @@ export default function Table() {
     isFiltered: filter.virtualClusters.size > 0,
     onRender(user) {
       return getVirtualCluster(user);
+    },
+  });
+
+  const additionalInformationColumn = applySortProps({
+    key: 'additionalInformation',
+    minWidth: 250,
+    name: 'Additional Information',
+    className: FontClassNames.mediumPlus,
+    headerClassName: FontClassNames.medium,
+    isResizable: true,
+    onRender(user) {
+      return getAdditionalInformation(user);
     },
   });
 
@@ -191,7 +215,9 @@ export default function Table() {
     usernameColumn,
     adminColumn,
     emailColumn,
+    quotaColumn,
     virtualClusterColumn,
+    additionalInformationColumn,
     actionsColumn,
   ];
 

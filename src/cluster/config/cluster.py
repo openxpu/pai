@@ -17,6 +17,7 @@
 
 
 import sys
+import base64
 import subprocess
 import logging
 import logging.config
@@ -142,17 +143,15 @@ class Cluster:
             self.login_docker_registry(domain, username, passwd)
 
             base64code = self.execute_shell_with_output(
-                "cat ~/.docker/config.json | base64",
+                "cat ~/.docker/config.json",
                 "Failed to base64 the docker's config.json"
             )
         else:
             self.logger.info("docker registry authentication not provided")
 
-            base64code = "{}".encode("base64")
+            base64code = "{}"
 
-        docker_registry_configuration["base64code"] = base64code.replace("\n", "")
-
-
+        docker_registry_configuration["base64code"] = base64.b64encode(base64code.strip().encode()).decode("utf-8")
 
     def generate_docker_credential(self, docker_registry_configuration):
         username = docker_registry_configuration["username"] and str(docker_registry_configuration["username"])

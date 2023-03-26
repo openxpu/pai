@@ -23,15 +23,15 @@ import readline
 import logging
 import logging.config
 
-from k8sPaiLibrary.maintainlib import add as k8s_add
-from k8sPaiLibrary.maintainlib import remove as k8s_remove
-from k8sPaiLibrary.maintainlib import etcdfix as k8s_etcd_fix
-from k8sPaiLibrary.maintainlib import kubectl_conf_check
-from k8sPaiLibrary.maintainlib import kubectl_install
-from k8sPaiLibrary.maintainlib import update as k8s_update
-from k8sPaiLibrary.maintainlib import k8s_util
+from .k8sPaiLibrary.maintainlib import add as k8s_add
+from .k8sPaiLibrary.maintainlib import remove as k8s_remove
+from .k8sPaiLibrary.maintainlib import etcdfix as k8s_etcd_fix
+from .k8sPaiLibrary.maintainlib import kubectl_conf_check
+from .k8sPaiLibrary.maintainlib import kubectl_install
+from .k8sPaiLibrary.maintainlib import update as k8s_update
+from .k8sPaiLibrary.maintainlib import k8s_util
 
-from clusterObjectModel.cluster_object_model import cluster_object_model
+from .clusterObjectModel.cluster_object_model import cluster_object_model
 
 logger = logging.getLogger(__name__)
 
@@ -64,7 +64,7 @@ class ClusterCmd():
         count_input_deprecated = 0
 
         while True:
-            user_input_deprecated = raw_input("Do you want to continue this operation? (Y/N) ")
+            user_input_deprecated = input("Do you want to continue this operation? (Y/N) ")
             if user_input_deprecated == "N":
                 sys.exit(0)
             elif user_input_deprecated == "Y":
@@ -112,7 +112,7 @@ class ClusterCmd():
         count_input = 0
 
         while True:
-            user_input = raw_input("Do you want to continue this operation? (Y/N) ")
+            user_input = input("Do you want to continue this operation? (Y/N) ")
             if user_input == "N":
                 return
             elif user_input == "Y":

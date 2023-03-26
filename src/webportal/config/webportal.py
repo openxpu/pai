@@ -16,8 +16,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import json
-import urllib
-import urlparse
+from urllib import parse
 
 
 class Webportal:
@@ -45,8 +44,8 @@ class Webportal:
             uri = plugin['uri']
             if 'config' in plugin:
                 # Python 2 only uses urlquote_plus in urlencode
-                config_query = urllib.urlencode(plugin['config'], True).replace('+', '%20')
-                uri = urlparse.urljoin(uri, '?' + config_query)
+                config_query = parse.urlencode(plugin['config'], True).replace('+', '%20')
+                uri = parse.urljoin(uri, '?' + config_query)
             return {
                 'id': plugin.get('id'),
                 'title': plugin['title'],
