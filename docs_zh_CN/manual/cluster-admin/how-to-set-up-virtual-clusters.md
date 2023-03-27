@@ -2,13 +2,13 @@
 
 ## Hived Scheduler介绍
 
-OpenPAI 支持两种调度器：Kubernetes default scheduler 和 [hivedscheduler](https://github.com/microsoft/hivedscheduler)。Hivedscheduler是一个用于深度学习的 Kubernetes Scheduler。它支持虚拟集群划分，拓扑感知的资源保证、以及性能优化的 Gang Scheduling，这些都是 k8s default scheduler 不支持的。如果您没有在安装时显式声明 `enable_hived_scheduler: false`，那么 Hivedscheduler 就是开启的。请注意，目前只有Hivedscheduler支持虚拟集群设置，k8s default scheduler 不支持。
+OpenPAI 支持两种调度器：Kubernetes default scheduler 和 [hivedscheduler](https://github.com/openxpu/hivedscheduler)。Hivedscheduler是一个用于深度学习的 Kubernetes Scheduler。它支持虚拟集群划分，拓扑感知的资源保证、以及性能优化的 Gang Scheduling，这些都是 k8s default scheduler 不支持的。如果您没有在安装时显式声明 `enable_hived_scheduler: false`，那么 Hivedscheduler 就是开启的。请注意，目前只有Hivedscheduler支持虚拟集群设置，k8s default scheduler 不支持。
 
 ## 设置虚拟集群 (Virtual Cluster)
 
 ### GPU虚拟集群的配置
 
-在开始之前，请阅读 [此文档](https://github.com/microsoft/hivedscheduler/blob/master/doc/user-manual.md)，以了解如何写 hived scheduler 配置。
+在开始之前，请阅读 [此文档](https://github.com/openxpu/hivedscheduler/blob/master/doc/user-manual.md)，以了解如何写 hived scheduler 配置。
 
 在 [`services-configuration.yaml`](./basic-management-operations.md#pai-service-management-and-paictl) 中，有一个 hived scheduler 部分，如下：
 
@@ -45,7 +45,7 @@ hivedscheduler:
 ...
 ```
 
-如果您按照 [安装指南](./installation-guide.md) 操作，您会在 [`services-configuration.yaml`](./basic-management-operations.md#pai-service-management-and-paictl) 里找到类似的设置[hived scheduler 文档](https://github.com/microsoft/hivedscheduler/blob/master/doc/user-manual.md)包含这些字段的详细说明。您可以更新配置并建立虚拟集群。例如，在上面的设置中，我们有 3 个节点：`worker1`，`worker2` 和 `worker3`。它们都在 `default` 虚拟集群中。如果我们要创建两个 VC（Virtual Cluster，即虚拟集群），一个叫 `default`，包含两个节点，另一个叫 `new` ，包含一个节点，我们可以先修改 `services-configuration.yaml`：
+如果您按照 [安装指南](./installation-guide.md) 操作，您会在 [`services-configuration.yaml`](./basic-management-operations.md#pai-service-management-and-paictl) 里找到类似的设置[hived scheduler 文档](https://github.com/openxpu/hivedscheduler/blob/master/doc/user-manual.md)包含这些字段的详细说明。您可以更新配置并建立虚拟集群。例如，在上面的设置中，我们有 3 个节点：`worker1`，`worker2` 和 `worker3`。它们都在 `default` 虚拟集群中。如果我们要创建两个 VC（Virtual Cluster，即虚拟集群），一个叫 `default`，包含两个节点，另一个叫 `new` ，包含一个节点，我们可以先修改 `services-configuration.yaml`：
 
 ```yaml
 # services-configuration.yaml
