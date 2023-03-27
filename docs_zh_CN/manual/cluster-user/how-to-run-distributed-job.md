@@ -16,12 +16,12 @@
 
 Example Name | Multi-GPU | Multi-Node | Backend |Apex| Job protocol |
 ---|---|---|---|---|---| 
-Single-Node DataParallel CIFAR-10 | ✓| x | -|-| [cifar10-single-node-gpus-cpu-DP.yaml](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-node-gpus-cpu-DP.yaml)|
-cifar10-single-mul-DDP-gloo.yaml | ✓|  ✓ | gloo|-| [cifar10-single-mul-DDP-gloo.yaml](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo.yaml)|
-cifar10-single-mul-DDP-nccl | ✓| ✓ |nccl|-| [cifar10-single-mul-DDP-nccl.yaml](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-nccl.yaml)|
-cifar10-single-mul-DDP-gloo-Apex-mixed | ✓|  ✓ | gloo|✓ | [cifar10-single-mul-DDP-gloo-Apex-mixed.yaml](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo-Apex-mixed.yaml)|
-cifar10-single-mul-DDP-nccl-Apex-mixed | ✓|  ✓ | nccl|  ✓ | [cifar10-single-mul-DDP-gloo-Apex-mixed.yaml](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo-Apex-mixed.yaml)|
-imagenet-single-mul-DDP-gloo | ✓|  ✓| gloo|-| [imagenet-single-mul-DDP-gloo.yaml](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/Lite-imagenet-single-mul-DDP-gloo.yaml)|
+Single-Node DataParallel CIFAR-10 | ✓| x | -|-| [cifar10-single-node-gpus-cpu-DP.yaml](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-node-gpus-cpu-DP.yaml)|
+cifar10-single-mul-DDP-gloo.yaml | ✓|  ✓ | gloo|-| [cifar10-single-mul-DDP-gloo.yaml](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo.yaml)|
+cifar10-single-mul-DDP-nccl | ✓| ✓ |nccl|-| [cifar10-single-mul-DDP-nccl.yaml](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-nccl.yaml)|
+cifar10-single-mul-DDP-gloo-Apex-mixed | ✓|  ✓ | gloo|✓ | [cifar10-single-mul-DDP-gloo-Apex-mixed.yaml](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo-Apex-mixed.yaml)|
+cifar10-single-mul-DDP-nccl-Apex-mixed | ✓|  ✓ | nccl|  ✓ | [cifar10-single-mul-DDP-gloo-Apex-mixed.yaml](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo-Apex-mixed.yaml)|
+imagenet-single-mul-DDP-gloo | ✓|  ✓| gloo|-| [imagenet-single-mul-DDP-gloo.yaml](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/Lite-imagenet-single-mul-DDP-gloo.yaml)|
 
 ## DataParallel
 
@@ -38,5 +38,5 @@ os.environ['MASTER_PORT'] = os.environ['PAI_worker_0_SynPort_PORT']
 如果您使用`gloo`作为DDP通信后端，请设置正确的网络接口，例如 `export GLOO_SOCKET_IFNAME=eth0`。
 
 
-我们提供 [gloo](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo.yaml) 以及 [nccl](https://github.com/microsoft/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-nccl.yaml) 为后端的样例程序。
+我们提供 [gloo](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-gloo.yaml) 以及 [nccl](https://github.com/openxpu/pai/tree/master/examples/Distributed-example/cifar10-single-mul-DDP-nccl.yaml) 为后端的样例程序。
 
