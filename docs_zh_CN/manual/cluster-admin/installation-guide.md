@@ -68,7 +68,7 @@ worker机器会被用来执行任务，您可以在安装期间指定一台或�
 
 我们支持不同种类的worker：CPU机器、GPU机器、以及拥有其他计算设备（如TPU、NPU）的机器。
 
-同时，我们还有两种调度器：Kubernetes default scheduler和[hivedscheduler](https://github.com/microsoft/hivedscheduler)。
+同时，我们还有两种调度器：Kubernetes default scheduler和[hivedscheduler](https://github.com/openxpu/hivedscheduler)。
 
 hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓扑感知的资源保证、以及性能优化的 Gang Scheduling，这些都是 k8s default scheduler 不支持的。
 
@@ -235,7 +235,7 @@ docker_image_tag: v1.8.2
 # OpenPAI's service image registry. #
 #####################################
 # docker_registry_domain: docker.io
-# docker_registry_namespace: openpai
+# docker_registry_namespace: openxpu
 # docker_registry_username: exampleuser
 # docker_registry_password: examplepasswd
 
@@ -384,7 +384,7 @@ You can go to http://<your-master-ip>, then use the default username and passwor
 
 正如这个提示所说的，您可以用 `admin` 和 `admin-password` 来登录Webportal，并提交一个任务来验证安装。另外，我们已在目录`~/pai-deploy/cluster-cfg`下生成了OpenPAI的配置文件，如果您之后需要自定义集群的话，这些配置文件有可能会被用到。
 
-**如果您使用的worker是CPU worker、NVIDIA GPU worker、AMD GPU worker、Enflame DTU worker之外的worker种类**: 请在集群中手动安装设备的device plugin，否则会无法使用Kubernetes default scheduler。 目前可以自动安装的device plugin被列在[这个文件中](https://github.com/microsoft/pai/blob/master/src/device-plugin/deploy/start.sh.template)。您可以提交PR来支持您的设备。
+**如果您使用的worker是CPU worker、NVIDIA GPU worker、AMD GPU worker、Enflame DTU worker之外的worker种类**: 请在集群中手动安装设备的device plugin，否则会无法使用Kubernetes default scheduler。 目前可以自动安装的device plugin被列在[这个文件中](https://github.com/openxpu/pai/blob/master/src/device-plugin/deploy/start.sh.template)。您可以提交PR来支持您的设备。
 
 ## <div id="keep-a-folder">保留一个文件夹</div>
 
