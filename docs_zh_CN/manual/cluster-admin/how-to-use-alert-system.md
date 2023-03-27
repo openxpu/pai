@@ -199,17 +199,17 @@ alert-manager:
 
 例如，`stop-jobs`这个处理措施实际是通过普罗米修斯的`webhook`调用`localhost:9095/alert-handler/stop-jobs`来实现的。在`alert-handler`内部，这个请求被转发给OpenPAI的REST API，来结束相应的任务。您可以再`alert-handler`中添加新的API，来实现新的处理措施。
 
-`alert-handler`的源码位置在[这里](https://github.com/microsoft/pai/blob/master/src/alert-manager/src/alert-handler)。
+`alert-handler`的源码位置在[这里](https://github.com/openxpu/pai/blob/master/src/alert-manager/src/alert-handler)。
 
 #### 检查处理措施的依赖
 
 正如我们之前所说的，想要让一个处理措施可用，管理员需要添加相应的配置。
 
-请检查[这个文件夹](https://github.com/microsoft/pai/tree/master/src/alert-manager/config)， 并且为您新添加的处理措施指定它的依赖规则。
+请检查[这个文件夹](https://github.com/openxpu/pai/tree/master/src/alert-manager/config)， 并且为您新添加的处理措施指定它的依赖规则。
 
 #### 在Webhook的定义中添加该处理措施
 
-在`service-configuration.yaml`中定义`receiver`的时候，实际我们会把对应的处理措施渲染到[这里](https://github.com/microsoft/pai/blob/master/src/alert-manager/deploy/alert-manager-configmap.yaml.template)的webhook_configs中。
+在`service-configuration.yaml`中定义`receiver`的时候，实际我们会把对应的处理措施渲染到[这里](https://github.com/openxpu/pai/blob/master/src/alert-manager/deploy/alert-manager-configmap.yaml.template)的webhook_configs中。
 
 所有我们提供的处理措施，即`email-admin`, `email-user`, `stop-jobs`, `tag-jobs`和`cordon-nodes`，在`alert-manager`中会发送相应的POST请求到`alert-handler`，对应的URL如下：
 
@@ -221,7 +221,7 @@ alert-manager:
 
 发送POST请求时，请求的body是由`alert-manager`自动填写的。具体的处理措施将会在`alert-handler`内部运行。
 
-请在[这里](https://github.com/microsoft/pai/blob/master/src/alert-manager/src/alert-handler)添加您处理措施名称到`alert-handler` URL路径的渲染规则。
+请在[这里](https://github.com/openxpu/pai/blob/master/src/alert-manager/src/alert-handler)添加您处理措施名称到`alert-handler` URL路径的渲染规则。
 
 以上步骤全部完成后，记得在dev box容器中重新build和push Docker镜像，并在重启`alert-manager`服务。
 
