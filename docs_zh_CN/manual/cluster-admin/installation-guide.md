@@ -34,7 +34,7 @@ master机器用于运行核心Kubernetes组件和核心OpenPAI服务。目前，
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04、20.04应该可用，但没有经过完整测试)</li>
+        <li>Ubuntu 18.04 </li>
         <li>SSH服务已开启。</li>
         <li>可以免密登录所有master和worker机器。</li>
         <li>Docker已被正确安装。</li>
@@ -52,7 +52,7 @@ master机器用于运行核心Kubernetes组件和核心OpenPAI服务。目前，
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04、20.04应该可用，但没有经过完整测试)</li>
+        <li>Ubuntu 18.04 </li>
         <li>SSH服务已开启。</li>
         <li>和所有worker机器有同样的SSH用户名和密码，且该SSH用户有sudo权限。</li>
         <li>Docker已被正确安装。</li>
@@ -100,7 +100,7 @@ hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓�
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04、20.04应该可用，但没有经过完整测试)</li>
+        <li>Ubuntu 18.04 </li>
         <li>SSH服务已开启。 </li>
         <li>所有master和worker机器有同样的SSH用户名和密码，且该SSH用户有sudo权限。</li>
         <li>Docker已被正确安装。</li>
@@ -156,22 +156,18 @@ hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓�
 在dev box机器上，使用下面的命令来克隆OpenPAI的repo：
 
 ```bash
-git clone https://github.com/microsoft/pai.git
+git clone https://github.com/openxpu/pai.git
 cd pai
 ```
 
 checkout到某一个tag，来选择需要安装的OpenPAI版本：
 
 ```bash
-git checkout v1.8.1
+git checkout v1.8.2
 ```
 
 接下来，请编辑`<pai-code-dir>/contrib/kubespray/config`目录下的`layout.yaml`和`config.yaml`文件。
 这两个文件分别指定了集群的机器组成和自定义设置。下面是示例：
-
-#### 关于中国用户的提示
-
-在中国安装会有一些网络问题，在开始前，请先阅读[这个issue](https://github.com/microsoft/pai/issues/5592)。
 
 #### <div id="layoutyaml-format">`layout.yaml` 格式示例</div>
 
@@ -221,7 +217,7 @@ machine-list:
 ``` yaml
 user: forexample
 password: forexample
-docker_image_tag: v1.8.1
+docker_image_tag: v1.8.2
 
 # Optional
 
