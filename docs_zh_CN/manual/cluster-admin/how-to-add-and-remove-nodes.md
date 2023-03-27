@@ -30,7 +30,7 @@ OpenPAI暂时不支持修改master结点。因此，这里只提供添加worker�
 
 - 使用`paictl.py`将集群中正在使用的设置拉取到`<配置文件夹>`。
 
-    *注意*：请检查拉取的配置文件是否包含`config.yaml`。在v1.7.0版本以前，`config.yaml`存储于`dev box`机器上的`~/pai-deploy/cluster-cfg/config.yaml`位置。如果您已升级到 v1.7.0，请将它复制到`<配置文件夹>`并上传到K8s集群中。如果您的`config.yaml`已丢失，请参考[config.yaml格式示例](./installation-guide.md#configyamlexample)重新创建一个。
+    *注意*：请检查拉取的配置文件是否包含`config.yaml`。在v1.7.0版本以前，`config.yaml`存储于`dev box`机器上的`~/pai-deploy/cluster-cfg/config.yaml`位置。如果您已升级到 v1.7.0，请将它复制到`<配置文件夹>`并上传到K8s集群中。如果您的`config.yaml`已丢失，请参考[config.yaml格式示例](./installation-guide.md#configyaml-example)重新创建一个。
 
   ```bash
   ./paictl.py config pull -o <配置文件夹>
