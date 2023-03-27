@@ -31,9 +31,9 @@ webportal:
 
 ## 部署Openpaimarketplace为Webportal插件
 
-[Openpaimarketplace](https://github.com/microsoft/openpaimarketplace) 是一个存储 openpai 示例和任务模板的地方。用户可以使用 openpaimarketplace 共享它们的任务或运行/学习其他人共享的任务。
+[Openpaimarketplace](https://github.com/openxpu/openpaimarketplace) 是一个存储 openpai 示例和任务模板的地方。用户可以使用 openpaimarketplace 共享它们的任务或运行/学习其他人共享的任务。
 
-要部署 openpaimarketplace，请参考 [项目文档](https://github.com/microsoft/openpaimarketplace) 中关于如何部署市场服务和 Webportal 插件的部分。
+要部署 openpaimarketplace，请参考 [项目文档](https://github.com/openxpu/openpaimarketplace/blob/master/docs/index.md) 中关于如何部署市场服务和 Webportal 插件的部分。
 
 部署后，按照 [上一部分](#how-to-install-a-webportal-plugin) 更改带有 marketplace 插件 URL 的 Webportal 配置，然后重启 Webportal marketplace了。
 
