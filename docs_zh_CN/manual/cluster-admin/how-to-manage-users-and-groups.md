@@ -208,4 +208,4 @@ authentication:
 ### 故障排除
 
 如果验证失败的话，您可以尝试去删除rest server服务，然后重启它再进行尝试。
-依旧不行的话，请[在Github上提交issue](https://github.com/microsoft/pai/issues/new/choose)，并提供相应的信息。
+依旧不行的话，请[在Github上提交issue](https://github.com/openxpu/pai/issues/new/choose)，并提供相应的信息。
