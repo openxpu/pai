@@ -102,11 +102,11 @@ PAI_CONTAINER_HOST_<port-label>_PORT_LIST
 
    <img src="./imgs/export-and-import.png" width="100%" height="100%" />
 
-任务协议的完整参考资料请查阅 [任务协议](https://github.com/microsoft/openpai-protocol/blob/master/schemas/v2/schema.yaml)。
+任务协议的完整参考资料请查阅 [任务协议](https://github.com/openxpu/openpai-protocol/blob/master/schemas/v2/schema.yaml)。
 
 ## 使用 Prerequisites
 
-[OpenPAI 的任务协议](https://github.com/microsoft/openpai-protocol/blob/master/schemas/v2/schema.yaml) 支持用户在每个task role中使用不同种类的 prerequisites （例如 dockerimage、data 和 script）。prerequisites 是在任务协议中*可分享*的模块。例如，一个数据集可以被定义为一个 prerequisite ，并且被不同的任务使用。
+[OpenPAI 的任务协议](https://github.com/openxpu/openpai-protocol/blob/master/schemas/v2/schema.yaml) 支持用户在每个task role中使用不同种类的 prerequisites （例如 dockerimage、data 和 script）。prerequisites 是在任务协议中*可分享*的模块。例如，一个数据集可以被定义为一个 prerequisite ，并且被不同的任务使用。
 
 这里是一个使用 prerequisites 的例子：
 
@@ -194,11 +194,11 @@ taskRoles:
 
 ### TensorFlow CIFAR10
 
-此示例是 Tensorflow CIFAR-10 训练任务，它运行了一个参数服务器（parameter server）和一个worker。这项任务需要至少 5 个 GPU。请参考 [tensorflow-cifar10.yaml](https://github.com/microsoft/pai/blob/master/marketplace-v2/tensorflow-cifar10.yaml)。
+此示例是 Tensorflow CIFAR-10 训练任务，它运行了一个参数服务器（parameter server）和一个worker。这项任务需要至少 5 个 GPU。请参考 [tensorflow-cifar10.yaml](https://github.com/openxpu/pai/blob/master/marketplace-v2/tensorflow-cifar10.yaml)。
 
 ### Horovod PyTorch
 
-示例[horovod-pytorch-synthetic-benchmark.yaml](https://github.com/microsoft/pai/blob/master/marketplace-v2/horovod-pytorch-synthetic-benchmark.yaml)是一个使用了PyTorch 和 Open MPI 的 Horovod benchmark。请确保任务 yaml 中的 `IFNAME` 设置适合您的环境。它至少需要 8 个 GPU。
+示例[horovod-pytorch-synthetic-benchmark.yaml](https://github.com/openxpu/pai/blob/master/marketplace-v2/horovod-pytorch-synthetic-benchmark.yaml)是一个使用了PyTorch 和 Open MPI 的 Horovod benchmark。请确保任务 yaml 中的 `IFNAME` 设置适合您的环境。它至少需要 8 个 GPU。
 
 ## InfiniBand 任务
 
@@ -278,6 +278,6 @@ extras:
 
 ## 参考
 
- - [任务协议](https://github.com/microsoft/openpai-protocol/blob/master/schemas/v2/schema.yaml)
- - [PAI 任务退出规范用户手册](https://github.com/microsoft/pai/blob/master/src/k8s-job-exit-spec/config/user-manual.md)
- - [重试策略](https://github.com/microsoft/frameworkcontroller/blob/master/doc/user-manual.md#retrypolicy)
+ - [任务协议](https://github.com/openxpu/openpai-protocol/blob/master/schemas/v2/schema.yaml)
+ - [PAI 任务退出规范用户手册](https://github.com/openxpu/pai/blob/master/src/k8s-job-exit-spec/config/user-manual.md)
+ - [重试策略](https://github.com/openxpu/frameworkcontroller/blob/master/doc/user-manual.md#retrypolicy)
