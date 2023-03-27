@@ -8,7 +8,7 @@ OpenPAI暂时不支持修改master结点。因此，这里只提供添加worker�
 
 *注意*：如果您只需要删除结点，请跳过这一节。
 
-- 确认您要添加的worker结点符合[安装要求](./installation-guide.md##installation-requirements)。
+- 确认您要添加的worker结点符合[安装要求](./installation-guide.md#installation-requirements)。
 
 - 如果您创建了PV或PVC, 请确认要添加的worker结点符合[数据存储要求](./how-to-set-up-storage.md#confirm-environment-on-worker-nodes)。
 
@@ -21,7 +21,7 @@ OpenPAI暂时不支持修改master结点。因此，这里只提供添加worker�
 
 ### 更改集群设置 
 
-- 登入您的`dev box`机器并进入该集群对应的`dev box` Docker容器，并切换到`/pai`文件夹。如果您还未启动`dev box`容器，请[启动一个](./basic-management-operations.md##pai-service-management-and-paictl)。
+- 登入您的`dev box`机器并进入该集群对应的`dev box` Docker容器，并切换到`/pai`文件夹。如果您还未启动`dev box`容器，请[启动一个](./basic-management-operations.md#pai-service-management-and-paictl)。
 
   ```bash
   sudo docker exec -it <您的dev box容器名> bash
@@ -55,7 +55,7 @@ OpenPAI暂时不支持修改master结点。因此，这里只提供添加worker�
 
 - 检查`<配置文件夹>/config.yaml`中的设置是否能确保您连接到集群中的所有机器。如果您使用SSH密钥对连接到集群，请将`dev box`机器上的`~/.ssh`文件夹挂载到`dev box` Docker容器的`/root/.ssh`。
 
-- 在`<配置文件夹>/services-configuration.yaml`中适当修改HiveD的配置。 请参考[如何设置虚拟集群](./how-to-set-up-virtual-clusters.md)和[HiveD调度器的文档](https://github.com/microsoft/hivedscheduler/blob/master/doc/user-manual.md)。
+- 在`<配置文件夹>/services-configuration.yaml`中适当修改HiveD的配置。 请参考[如何设置虚拟集群](./how-to-set-up-virtual-clusters.md)和[HiveD调度器的文档](https://github.com/openxpu/hivedscheduler/blob/master/doc/user-manual.md)。
 
     *注意*：如果您使用的是K8S默认调度器，请跳过这一步。
 
