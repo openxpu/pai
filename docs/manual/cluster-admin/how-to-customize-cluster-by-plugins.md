@@ -32,9 +32,9 @@ After modifying the configuration, push it to the cluster and restart webportal 
 
 ## Deploy Openpaimarketplace as Webportal Plugin
 
-[Openpaimarketplace](https://github.com/microsoft/openpaimarketplace) is a place that stores examples and job templates of OpenPAI. Users could use openpaimarketplace to share their jobs or run-and-learn others' sharing jobs.
+[Openpaimarketplace](https://github.com/openxpu/openpaimarketplace) is a place that stores examples and job templates of OpenPAI. Users could use openpaimarketplace to share their jobs or run-and-learn others' sharing jobs.
 
-To deploy openpaimarketplace, please refer to [the project doc](https://github.com/microsoft/openpaimarketplace) about how to deploy the marketplace service and webportal plugin.
+To deploy openpaimarketplace, please refer to [the project doc](https://github.com/openxpu/openpaimarketplace) about how to deploy the marketplace service and webportal plugin.
 
 After deployment, follow the [previous part](#how-to-install-a-webportal-plugin) to change the webportal configuration with marketplace plugin URL and restart webportal. Then you could use marketplace from the sidebar.
 
