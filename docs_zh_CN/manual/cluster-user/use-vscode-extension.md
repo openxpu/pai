@@ -1,6 +1,6 @@
 # 使用VSCode扩展
 
-[OpenPAI VS Code Client](https://github.com/microsoft/openpaivscode) 是一个VSCode扩展，用于连接OpenPAI集群、提交任务、本地模拟任务、管理文件等。请使用 [这个页面上](https://github.com/microsoft/openpaivscode/releases) 发布的vsix文件来安装它。
+[OpenPAI VS Code Client](https://github.com/openxpu/openpaivscode) 是一个VSCode扩展，用于连接OpenPAI集群、提交任务、本地模拟任务、管理文件等。请使用 [这个页面上](https://github.com/openxpu/openpaivscode/releases) 发布的vsix文件来安装它。
 
 ## 连接OpenPAI集群
 
@@ -11,15 +11,15 @@
 1. 使用快捷键<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>打开命令面板。
 2. 如下所示，输入并查找 *PAI: Add PAI Cluster* ：
 
-    ![add cluster](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/add_cluster.png)
+    ![add cluster](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/add_cluster.png)
 
 3. 按 <kbd>Enter</kbd>, 然后输入OpenPAI集群的主机地址（可以是域名或IP地址）。 之后，再次按 <kbd>Enter</kbd>。
 
-    ![add cluster host](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/add_cluster_host.png)
+    ![add cluster host](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/add_cluster_host.png)
 
 4. 修改配置文件，至少需要添加用户名和密码字段。 完成后，单击右下角的`Finish`按钮。 请注意，如果直接保存并关闭文件，设置将不会生效。
 
-    ![add cluster configuration](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/add-cluster-finish.png)
+    ![add cluster configuration](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/add-cluster-finish.png)
 
 如果有多个OpenPAI集群，可以再次按照上述步骤进行添加。
 
@@ -28,15 +28,15 @@
 1. 使用快捷键 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 打开命令面板。
 2. 如下所示，输入并查找 *PAI: Add PAI Cluster* ：
 
-    ![add cluster](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/add_cluster.png)
+    ![add cluster](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/add_cluster.png)
 
 3. 按 <kbd>Enter</kbd>，然后输入OpenPAI集群的主机地址（可以是域名或IP地址）。之后，再次按 <kbd>Enter</kbd> 。
 
-    ![add cluster host](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/add_cluster_host.png)
+    ![add cluster host](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/add_cluster_host.png)
 
 4. 程序会打开一个网站，并要求您登录。如果登录成功，程序会自动填充用户名和token字段（可以手动更改）。完成后，单击右下角的*Finish*按钮。请注意，如果直接保存并关闭文件，设置将不会生效。
 
-    ![add cluster configuration](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/add_aad_cluster.gif)
+    ![add cluster configuration](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/add_aad_cluster.gif)
 
 如果有多个OpenPAI集群，可以再次按照上述步骤进行添加。
 
@@ -44,7 +44,7 @@
 
 添加集群配置后，您可以在*PAI CLUSTER EXPLORER* 窗格中找到集群，如下所示：
 
-![pai cluster explorer](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/pai_cluster_explorer.png)
+![pai cluster explorer](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/pai_cluster_explorer.png)
 
 请按照以下步骤操作来提交任务Yaml文件：
 
@@ -55,9 +55,9 @@
     在提交时，如果有多个OpenPAI集群，则需要选择一个。
 
     下面的动画展示了以上步骤：
-    ![submit job](https://raw.githubusercontent.com/Microsoft/openpaivscode/0.3.0/assets/submit-job-v2.gif)
+    ![submit job](https://raw.githubusercontent.com/microsoft/openpaivscode/0.3.0/assets/submit-job-v2.gif)
 
 
 ## 参考
 
-  - [VSCode扩展的完整文档](https://github.com/microsoft/openpaivscode/blob/master/README.md): 请注意，此完整文档中提到了两种任务：V1和V2任务。 由于V1任务已弃用，因此您可以跳过有关V1任务的内容。
+  - [VSCode扩展的完整文档](https://github.com/openxpu/openpaivscode/blob/master/README.md): 请注意，此完整文档中提到了两种任务：V1和V2任务。 由于V1任务已弃用，因此您可以跳过有关V1任务的内容。

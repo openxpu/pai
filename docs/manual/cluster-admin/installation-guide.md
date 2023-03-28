@@ -8,7 +8,7 @@ To install OpenPAI >= `v1.0.0`, please first check [Installation Requirements](#
 
 The deployment of OpenPAI requires you to have **at least 3 separate machines**: one dev box machine, one master machine, and one worker machine.
 
-Dev box machine controls masters and workers through SSH during installation, maintenance, and uninstallation. There should be one, and only one dev box.
+Dev box machine controls master and workers through SSH during installation, maintenance, and uninstallation. There should be one, and only one dev box.
 
 The master machine is used to run core Kubernetes components and core OpenPAI services. Currently, OpenPAI does not support high availability and you can only specify one master machine.
 
@@ -34,7 +34,7 @@ We recommend you to use CPU-only machines for dev box and master. The detailed r
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04, 20.04 should work, but not fully tested)</li>
+        <li>Ubuntu 18.04</li>
         <li>SSH service is enabled.</li>
         <li>Passwordless ssh to all other machines (master and worker machines).</li>
         <li>Docker is installed.</li>
@@ -52,7 +52,7 @@ We recommend you to use CPU-only machines for dev box and master. The detailed r
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04, 20.04 should work, but not fully tested)</li>
+        <li>Ubuntu 18.04</li>
         <li>SSH service is enabled. </li>
         <li>It shares the same username/password with worker machines, and have sudo privilege.</li>
         <li>Docker is installed.</li>
@@ -68,7 +68,7 @@ The worker machines are used to run jobs. You can use multiple workers during in
 
 We support various types of workers: CPU workers, GPU workers, and workers with other computing devices (e.g. TPU, NPU).
 
-At the same time, we also support two schedulers: the Kubernetes default scheduler, and [hivedscheduler](https://github.com/microsoft/hivedscheduler).
+At the same time, we also support two schedulers: the Kubernetes default scheduler, and [hivedscheduler](https://github.com/openxpu/hivedscheduler).
 
 Hivedscheduler is the default for OpenPAI. It supports virtual cluster division, topology-aware resource guarantee, and optimized gang scheduling, which are not supported in the k8s default scheduler.
 
@@ -100,7 +100,7 @@ Please check the following requirements for different types of worker machines:
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04, 20.04 should work, but not fully tested)</li>
+        <li>Ubuntu 18.04</li>
         <li>SSH service is enabled. </li>
         <li>It shares the same username/password with all other machines, and have sudo privilege.</li>
         <li>Docker is installed.</li>
@@ -114,8 +114,8 @@ Please check the following requirements for different types of worker machines:
     <td>
       The same as <code>CPU worker</code>, and with the following additional requirements:
       <ul>
-        <li><b>NVIDIA GPU Driver is installed.</b> You may use <a href="./installation-faqs-and-troubleshooting.html#how-to-check-whether-the-gpu-driver-is-installed">a command</a> to check it. Refer to <a href="./installation-faqs-and-troubleshooting.html#how-to-install-gpu-driver">the installation guidance</a> in FAQs if the driver is not successfully installed. If you are wondering which version of GPU driver you should use, please also refer to <a href="./installation-faqs-and-troubleshooting.html#which-version-of-nvidia-driver-should-i-install">FAQs</a>.</li>
-        <li><b><a href="https://github.com/NVIDIA/nvidia-container-runtime">nvidia-container-runtime</a> is installed. And be configured as the default runtime of docker.</b> Please configure it in <a href="https://docs.docker.com/config/daemon/#configure-the-docker-daemon">docker-config-file (daemon.json)</a>, instead of in the systemd's config. You can use command <code>sudo docker run --rm nvidia/cuda:10.0-base nvidia-smi</code> to check it. This command should output information of available GPUs if it is setup properly. Refer to <a href="./installation-faqs-and-troubleshooting.html#how-to-install-nvidia-container-runtime">the installation guidance</a> if it is not successfully set up. We don't recommend to use <code>nvidia-docker2</code>. For a detailed comparison between <code>nvidia-container-runtime</code> and <code>nvidia-docker2</code>, please refer to <a href="https://github.com/NVIDIA/nvidia-docker/issues/1268#issuecomment-632692949">here</a>. </li>
+        <li><b>NVIDIA GPU Driver is installed.</b> You may use <a href="./installation-faqs-and-troubleshooting.md#how-to-check-whether-the-gpu-driver-is-installed">a command</a> to check it. Refer to <a href="./installation-faqs-and-troubleshooting.md#how-to-install-gpu-driver">the installation guidance</a> in FAQs if the driver is not successfully installed. If you are wondering which version of GPU driver you should use, please also refer to <a href="./installation-faqs-and-troubleshooting.md#which-version-of-nvidia-driver-should-i-install">FAQs</a>.</li>
+        <li><b><a href="https://github.com/NVIDIA/nvidia-container-runtime">nvidia-container-runtime</a> is installed. And be configured as the default runtime of docker.</b> Please configure it in <a href="https://docs.docker.com/config/daemon/#configure-the-docker-daemon">docker-config-file (daemon.json)</a>, instead of in the systemd's config. You can use command <code>sudo docker run --rm nvidia/cuda:10.0-base nvidia-smi</code> to check it. This command should output information of available GPUs if it is setup properly. Refer to <a href="./installation-faqs-and-troubleshooting.md#how-to-install-nvidia-container-runtime">the installation guidance</a> if it is not successfully set up. We don't recommend to use <code>nvidia-docker2</code>. For a detailed comparison between <code>nvidia-container-runtime</code> and <code>nvidia-docker2</code>, please refer to <a href="https://github.com/NVIDIA/nvidia-docker/issues/1268#issuecomment-632692949">here</a>. </li>
       </ul>
     </td>
   </tr>
@@ -156,21 +156,19 @@ After you have checked the requirements, please follow these 3 steps to install 
 On the dev box machine, use the following commands to clone the OpenPAI repo:
 
 ```bash
-git clone https://github.com/microsoft/pai.git
+git clone https://github.com/openxpu/pai.git
 cd pai
 ```
 
 Choose a version to install by checkout to a specific tag:
 
 ```bash
-git checkout v1.8.1
+git checkout v1.8.2
 ```
 
 Please edit `layout.yaml` and a `config.yaml` file under `<pai-code-dir>/contrib/kubespray/config` folder.
 These two files specify the cluster layout and the customized configuration, respectively.
 The following is the format and example of these 2 files.
-
-**Tips for Chinese Users**: If you are in Mainland China, please read [this issue](https://github.com/microsoft/pai/issues/5592) first before you edit these files.
 
 #### `layout.yaml` format
 
@@ -220,7 +218,7 @@ machine-list:
 ``` yaml
 user: forexample
 password: forexample
-docker_image_tag: v1.8.1
+docker_image_tag: v1.8.2
 
 # Optional
 
@@ -248,7 +246,7 @@ docker_image_tag: v1.8.1
 # OpenPAI's service image registry. #
 #####################################
 # docker_registry_domain: docker.io
-# docker_registry_namespace: openpai
+# docker_registry_namespace: openxpu
 # docker_registry_username: exampleuser
 # docker_registry_password: examplepasswd
 
@@ -395,7 +393,7 @@ You can go to http://<your-master-ip>, then use the default username and passwor
 
 As the message says, you can use `admin` and `admin-password` to login to the webportal, then submit a job to validate your installation. We have generated the configuration files of OpenPAI in the folder `~/pai-deploy/cluster-cfg`. If you need further customization, they will be used in the future.
 
-**For those who use workers other than CPU workers, NVIDIA GPU workers, AMD GPU workers, and Enflame DTU workers**: Please manually deploy the device's device plugin in Kubernetes. Otherwise, the Kubernetes default scheduler won't work. Supported device plugins are listed [in this file](https://github.com/microsoft/pai/blob/master/src/device-plugin/deploy/start.sh.template). PRs are welcome.
+**For those who use workers other than CPU workers, NVIDIA GPU workers, AMD GPU workers, and Enflame DTU workers**: Please manually deploy the device's device plugin in Kubernetes. Otherwise, the Kubernetes default scheduler won't work. Supported device plugins are listed [in this file](https://github.com/openxpu/pai/blob/master/src/device-plugin/deploy/start.sh.template). PRs are welcome.
 
 ## Keep a Folder
 

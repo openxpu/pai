@@ -200,7 +200,7 @@ spec:
 
 <img src="./imgs/get-token.png" />
 
-在OpenPAI中，存储的访问权限是绑定到用户组的。 因此，您可以使用 [Group API](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#tag/group) 将存储分配给用户组。
+在OpenPAI中，存储的访问权限是绑定到用户组的。 因此，您可以使用 [Group API](https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#tag/group) 将存储分配给用户组。
 
 例如，如果要将`nfs-storage` PVC分配给`default`组，首先要调用GET `http(s)://<pai-master-ip>/rest-server/api/v2/groups/default`，它将返回：
 

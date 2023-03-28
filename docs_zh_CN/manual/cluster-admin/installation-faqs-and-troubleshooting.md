@@ -121,7 +121,7 @@ sudo reboot
 
 #### 如何在[Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/services/kubernetes-service/)部署带有[Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)的OpenPAI集群？
 
-请参考[这里](https://github.com/microsoft/pai/tree/master/contrib/aks-engine)。
+请参考[这里](https://github.com/openxpu/pai/tree/master/contrib/aks-engine)。
 
 ## <div id="troubleshooting">故障排查</div>
 

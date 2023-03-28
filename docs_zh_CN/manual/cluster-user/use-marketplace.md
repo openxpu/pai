@@ -1,11 +1,11 @@
 # 使用Marketplace
 
-[OpenPAI Marketplace](https://github.com/microsoft/openpaimarketplace) 可以存储任务示例和模板。 您可以使用`Marketplace`来运行和学习其他人的共享任务或共享自己的任务。
+[OpenPAI Marketplace](https://github.com/openxpu/openpaimarketplace) 可以存储任务示例和模板。 您可以使用`Marketplace`来运行和学习其他人的共享任务或共享自己的任务。
 ## 入口
 
 如果您的管理员启用了`Marketplace`插件，您将在Webportal的`Plugin`部分中找到一个链接，例如：
 
-> 如果您是PAI管理员，则可以查看 [部署文件](https://github.com/microsoft/openpaimarketplace/blob/master/docs/deployment.md) 了解如何部署和启用`Marketplace`插件。
+> 如果您是PAI管理员，则可以查看 [部署文件](https://github.com/openxpu/openpaimarketplace/blob/master/docs/admin/README.md) 了解如何部署和启用`Marketplace`插件。
 
 ![plugin](imgs/marketplace-plugin.png)
 

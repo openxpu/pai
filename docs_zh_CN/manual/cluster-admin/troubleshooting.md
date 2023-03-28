@@ -122,7 +122,7 @@ ansible-playbook -i inventory/mycluster/hosts.yml upgrade-cluster.yml --become -
 
 ### 如何增加Internal Storage的大小
 
-目前，OpenPAI使用[internal storage](https://github.com/microsoft/pai/tree/master/src/internal-storage)来存储数据库。Internal storage使用Linux loop device来提供一个有严格大小限制的存储。默认的限制是30 GB (或者，在OpenPAI <= `v1.1.0`时，为10GB)。这些空间大概可以保存1,000,000个任务。如果您想要更大的空间，可以follow下面的步骤：
+目前，OpenPAI使用[internal storage](https://github.com/openxpu/pai/tree/master/src/internal-storage)来存储数据库。Internal storage使用Linux loop device来提供一个有严格大小限制的存储。默认的限制是30 GB (或者，在OpenPAI <= `v1.1.0`时，为10GB)。这些空间大概可以保存1,000,000个任务。如果您想要更大的空间，可以follow下面的步骤：
 
 第一步. [登录进一个dev box container](./basic-management-operations.md#pai-service-management-and-paictl)
 
