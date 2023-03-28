@@ -140,7 +140,7 @@ ansible-playbook -i inventory/mycluster/hosts.yml upgrade-cluster.yml --become -
 
 ### How to Enlarge Internal Storage Size
 
-Currently, OpenPAI uses [internal storage](https://github.com/microsoft/pai/tree/master/src/internal-storage) to hold database. Internal storage is limited size storage. It leverages loop devices in Linux to provide a storage with strictly limited quota. The default quota is 30 GB (or 10GB for OpenPAI <= `v1.1.0`), which can hold about 1,000,000 jobs. If you want a larger space to hold more jobs, please follow these steps to enlarge the internal storage:
+Currently, OpenPAI uses [internal storage](https://github.com/openxpu/pai/tree/master/src/internal-storage) to hold database. Internal storage is limited size storage. It leverages loop devices in Linux to provide a storage with strictly limited quota. The default quota is 30 GB (or 10GB for OpenPAI <= `v1.1.0`), which can hold about 1,000,000 jobs. If you want a larger space to hold more jobs, please follow these steps to enlarge the internal storage:
 
 Step 1. [Exec into a dev box container.](./basic-management-operations.md#pai-service-management-and-paictl)
 
