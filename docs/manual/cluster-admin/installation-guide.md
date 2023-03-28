@@ -8,7 +8,7 @@ To install OpenPAI >= `v1.0.0`, please first check [Installation Requirements](#
 
 The deployment of OpenPAI requires you to have **at least 3 separate machines**: one dev box machine, one master machine, and one worker machine.
 
-Dev box machine controls masters and workers through SSH during installation, maintenance, and uninstallation. There should be one, and only one dev box.
+Dev box machine controls master and workers through SSH during installation, maintenance, and uninstallation. There should be one, and only one dev box.
 
 The master machine is used to run core Kubernetes components and core OpenPAI services. Currently, OpenPAI does not support high availability and you can only specify one master machine.
 
@@ -170,8 +170,6 @@ Please edit `layout.yaml` and a `config.yaml` file under `<pai-code-dir>/contrib
 These two files specify the cluster layout and the customized configuration, respectively.
 The following is the format and example of these 2 files.
 
-**Tips for Chinese Users**: If you are in Mainland China, please read [this issue](https://github.com/microsoft/pai/issues/5592) first before you edit these files.
-
 #### `layout.yaml` format
 
 ``` yaml
@@ -220,7 +218,7 @@ machine-list:
 ``` yaml
 user: forexample
 password: forexample
-docker_image_tag: v1.8.1
+docker_image_tag: v1.8.2
 
 # Optional
 
@@ -248,7 +246,7 @@ docker_image_tag: v1.8.1
 # OpenPAI's service image registry. #
 #####################################
 # docker_registry_domain: docker.io
-# docker_registry_namespace: openpai
+# docker_registry_namespace: openxpu
 # docker_registry_username: exampleuser
 # docker_registry_password: examplepasswd
 
