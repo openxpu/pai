@@ -19,7 +19,9 @@ while getopts "cv" opt; do
 done
 
 if [ $CONFIGCN -eq 1 ]; then
-  cd config && rm -rf config.yaml && mv config-cn.yaml config.yaml && cd ..
+  if [ -f ./config/config-cn.yaml ]; then
+    cd config && rm -rf config.yaml && mv config-cn.yaml config.yaml && cd ..
+  fi
 fi
 
 if [ $VERBOSE -eq 1 ]; then
