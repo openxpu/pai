@@ -1,6 +1,6 @@
 # Use VSCode Extension
 
-[OpenPAI VS Code Client](https://github.com/microsoft/openpaivscode) is a VSCode extension to connect OpenPAI clusters, submit AI jobs, simulate jobs locally, manage files, and so on. Please use the released vsix file on [this page](https://github.com/microsoft/openpaivscode/releases) to install it.
+[OpenPAI VS Code Client](https://github.com/openxpu/openpaivscode) is a VSCode extension to connect OpenPAI clusters, submit AI jobs, simulate jobs locally, manage files, and so on. Please use the released vsix file on [this page](https://github.com/openxpu/openpaivscode/releases) to install it.
 
 ## Connect to an OpenPAI cluster
 
@@ -63,4 +63,4 @@ To submit a job config YAML file, please follow the steps below:
 
 ## Reference
 
-  - [Full documentation of VSCode Extension](https://github.com/microsoft/openpaivscode/blob/master/README.md): Please note two kinds of jobs are mentioned in this full documentation: V1 and V2 job. You can safely skip contents about the V1 job since it is deprecated.
+  - [Full documentation of VSCode Extension](https://github.com/openxpu/openpaivscode/blob/master/README.md): Please note two kinds of jobs are mentioned in this full documentation: V1 and V2 job. You can safely skip contents about the V1 job since it is deprecated.
