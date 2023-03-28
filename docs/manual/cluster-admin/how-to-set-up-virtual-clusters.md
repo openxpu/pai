@@ -2,13 +2,13 @@
 
 ## What is Hived Scheduler and How to Configure it
 
-OpenPAI supports two kinds of schedulers: the Kubernetes scheduler, and [hivedscheduler](https://github.com/microsoft/hivedscheduler). [Hivedscheduler](https://github.com/microsoft/hivedscheduler) is a Kubernetes Scheduler for Deep Learning. It supports virtual cluster division, topology-aware resource guarantee, and optimized gang scheduling, which are not supported in the k8s default scheduler. If you didn't specify `enable_hived_scheduler: false` during installation, hived scheduler is enabled by default. Please notice the only hived scheduler supports virtual cluster setup, k8s default scheduler doesn't support it.
+OpenPAI supports two kinds of schedulers: the Kubernetes scheduler, and [hivedscheduler](https://github.com/openxpu/hivedscheduler). [Hivedscheduler](https://github.com/openxpu/hivedscheduler) is a Kubernetes Scheduler for Deep Learning. It supports virtual cluster division, topology-aware resource guarantee, and optimized gang scheduling, which are not supported in the k8s default scheduler. If you didn't specify `enable_hived_scheduler: false` during installation, hived scheduler is enabled by default. Please notice the only hived scheduler supports virtual cluster setup, k8s default scheduler doesn't support it.
 
 ## Set Up Virtual Clusters
 
 ### Configuration for GPU Virtual Cluster
 
-Before we start, please read [this doc](https://github.com/microsoft/hivedscheduler/blob/master/doc/user-manual.md) to learn how to write hived scheduler configuration.
+Before we start, please read [this doc](https://github.com/openxpu/hivedscheduler/blob/master/doc/user-manual.md) to learn how to write hived scheduler configuration.
 
 In [`services-configuration.yaml`](./basic-management-operations.md#pai-service-management-and-paictl), there is a section for hived scheduler, for example:
 
@@ -45,7 +45,7 @@ hivedscheduler:
 ...
 ```
 
-If you have followed the [installation guide](./installation-guide.md), you would find similar setting in your [`services-configuration.yaml`](./basic-management-operations.md#pai-service-management-and-paictl). The detailed explanation of these fields are in the [hived scheduler document](https://github.com/microsoft/hivedscheduler/blob/master/doc/user-manual.md). You can update the configuration and set up virtual clusters. For example, in the above settings, we have 3 nodes, `worker1`, `worker2`, and `worker3`. They are all in the `default` virtual cluster. If we want to create two VCs, one is called `default` and has 2 nodes, the other is called `new` and has 1 node, we can first modify `services-configuration.yaml`:
+If you have followed the [installation guide](./installation-guide.md), you would find similar setting in your [`services-configuration.yaml`](./basic-management-operations.md#pai-service-management-and-paictl). The detailed explanation of these fields are in the [hived scheduler document](https://github.com/openxpu/hivedscheduler/blob/master/doc/user-manual.md). You can update the configuration and set up virtual clusters. For example, in the above settings, we have 3 nodes, `worker1`, `worker2`, and `worker3`. They are all in the `default` virtual cluster. If we want to create two VCs, one is called `default` and has 2 nodes, the other is called `new` and has 1 node, we can first modify `services-configuration.yaml`:
 
 ```yaml
 # services-configuration.yaml
