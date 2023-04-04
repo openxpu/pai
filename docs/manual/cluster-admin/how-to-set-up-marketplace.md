@@ -2,7 +2,7 @@
 
 ## Set up marketplace in Installation
 
-[OpenPAI Marketplace](https://github.com/microsoft/openpaimarketplace) can store job examples and templates. You can use Marketplace to run-and-learn others' sharing jobs, save template or share your jobs.
+[OpenPAI Marketplace](https://github.com/openxpu/openpaimarketplace) can store job examples and templates. You can use Marketplace to run-and-learn others' sharing jobs, save template or share your jobs.
 In OpenPAI v1.6.0 or later, admin can deploy the marketplace in OpenPAI installation step by setting `enable_marketplace: "true"` in `config.yaml` under the `OpenPAI Customized Settings`.
 
 ### `config.yaml` example
@@ -36,4 +36,4 @@ Make sure the setting of `enable_marketplace` was `"true"` (include the quotatio
 
 ## Set up marketplace in a OpenPAI cluster and advance settings
 
-Please refer to [OpenPAI Marketplace Doc for Admins](https://github.com/microsoft/openpaimarketplace/blob/master/docs/admin/README.md#openpai-marketplace-doc-for-admins)
+Please refer to [OpenPAI Marketplace Doc for Admins](https://github.com/openxpu/openpaimarketplace/blob/master/docs/admin/README.md#openpai-marketplace-doc-for-admins)

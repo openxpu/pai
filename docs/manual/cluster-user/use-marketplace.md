@@ -1,12 +1,12 @@
 # Use Marketplace
 
-[OpenPAI Marketplace](https://github.com/microsoft/openpaimarketplace) can store job examples and templates. You can use Marketplace to run-and-learn others' sharing jobs or share your jobs.
+[OpenPAI Marketplace](https://github.com/openxpu/openpaimarketplace) can store job examples and templates. You can use Marketplace to run-and-learn others' sharing jobs or share your jobs.
 
 ## Entrance
 
 If your administrator enables marketplace plugin, you will find a link in the `Plugin` section on the webportal, like:
 
-> If you are PAI admin, you could check [deployment doc](https://github.com/microsoft/openpaimarketplace/blob/master/docs/deployment.md) to see how to deploy and enable marketplace plugin.
+> If you are PAI admin, you could check [deployment doc](https://github.com/openxpu/openpaimarketplace/blob/master/docs/admin/README.md) to see how to deploy and enable marketplace plugin.
 
 ![plugin](imgs/marketplace-plugin.png)
 

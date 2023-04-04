@@ -2,7 +2,7 @@
 
 [![Build Status](https://openpai.visualstudio.com/OpenPAI/_apis/build/status/OpenPAI-nightly-build?branchName=master)](https://openpai.visualstudio.com/OpenPAI/_build/latest?definitionId=25&branchName=master)
 [![Join the chat at https://gitter.im/Microsoft/pai](https://badges.gitter.im/Microsoft/pai.svg)](https://gitter.im/Microsoft/pai?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Version](https://img.shields.io/github/release/Microsoft/pai.svg)](https://github.com/Microsoft/pai/releases/latest)
+[![Version](https://img.shields.io/github/release/Microsoft/pai.svg)](https://github.com/openxpu/pai/releases/latest)
 
 OpenPAI是一个提供完整的人工智能模型训练和资源管理能力开源平台，它易于扩展，支持各种规模的on-premise、on-cloud和混合环境。
 
@@ -12,6 +12,6 @@ OpenPAI是一个提供完整的人工智能模型训练和资源管理能力开�
 
 如果您想学习如何建立新集群，如何管理集群，请阅读[管理员手册](./manual/cluster-admin/README.md)。
 
-如果您想阅读关于OpenPAI的简单介绍，请访问[Github](https://github.com/microsoft/pai/blob/master/README.md)。
+如果您想阅读关于OpenPAI的简单介绍，请访问[Github](https://github.com/openxpu/pai/blob/master/README.md)。
 
-如果您想反馈问题/Bug或提供新Feature，请提交至[GitHub](https://github.com/microsoft/pai)。
+如果您想反馈问题/Bug或提供新Feature，请提交至[GitHub](https://github.com/openxpu/pai)。

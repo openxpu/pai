@@ -34,7 +34,7 @@ master机器用于运行核心Kubernetes组件和核心OpenPAI服务。目前，
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04、20.04应该可用，但没有经过完整测试)</li>
+        <li>Ubuntu 18.04 </li>
         <li>SSH服务已开启。</li>
         <li>可以免密登录所有master和worker机器。</li>
         <li>Docker已被正确安装。</li>
@@ -52,7 +52,7 @@ master机器用于运行核心Kubernetes组件和核心OpenPAI服务。目前，
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04、20.04应该可用，但没有经过完整测试)</li>
+        <li>Ubuntu 18.04 </li>
         <li>SSH服务已开启。</li>
         <li>和所有worker机器有同样的SSH用户名和密码，且该SSH用户有sudo权限。</li>
         <li>Docker已被正确安装。</li>
@@ -68,7 +68,7 @@ worker机器会被用来执行任务，您可以在安装期间指定一台或�
 
 我们支持不同种类的worker：CPU机器、GPU机器、以及拥有其他计算设备（如TPU、NPU）的机器。
 
-同时，我们还有两种调度器：Kubernetes default scheduler和[hivedscheduler](https://github.com/microsoft/hivedscheduler)。
+同时，我们还有两种调度器：Kubernetes default scheduler和[hivedscheduler](https://github.com/openxpu/hivedscheduler)。
 
 hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓扑感知的资源保证、以及性能优化的 Gang Scheduling，这些都是 k8s default scheduler 不支持的。
 
@@ -100,7 +100,7 @@ hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓�
     </td>
     <td>
       <ul>
-        <li>Ubuntu 16.04 (18.04、20.04应该可用，但没有经过完整测试)</li>
+        <li>Ubuntu 18.04 </li>
         <li>SSH服务已开启。 </li>
         <li>所有master和worker机器有同样的SSH用户名和密码，且该SSH用户有sudo权限。</li>
         <li>Docker已被正确安装。</li>
@@ -114,8 +114,8 @@ hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓�
     <td>
       需要满足和<code>CPU worker</code>一样的要求，除此之外还有下面的额外要求：
       <ul>
-        <li><b>GPU驱动已被正确安装。</b> 您可以用<a href="./installation-faqs-and-troubleshooting.html#how-to-check-whether-the-gpu-driver-is-installed">这个命令</a>来检查。 如果您的GPU驱动未被正确安装，可以参考<a href="./installation-faqs-and-troubleshooting.html#how-to-install-gpu-driver">如何安装GPU驱动</a>。如果您对安装哪个版本的GPU驱动有疑问，可以阅读<a href="./installation-faqs-and-troubleshooting.html#which-version-of-nvidia-driver-should-i-install">这个文档</a>。</li>
-        <li><b><a href="https://github.com/NVIDIA/nvidia-container-runtime">nvidia-container-runtime</a>已被正确安装，并且被设置为Docker的默认runtime。</b> 因为systemd的配置会在接下来安装过程中被覆盖，所以请不要在systemd里设置 docker 默认runtime，而是在<a href="https://docs.docker.com/config/daemon/#configure-the-docker-daemon">docker-config-file (daemon.json)</a>里进行设置。 您可以使用命令<code>sudo docker run --rm nvidia/cuda:10.0-base nvidia-smi</code> 来检查这一项。如果该命令成功打出当前可用的显卡个数，就说明设置是没问题的。如果它未被正确安装，请参考<a href="./installation-faqs-and-troubleshooting.html#how-to-install-nvidia-container-runtime">如何安装nvidia container runtime</a>。 我们不推荐您使用<code>nvidia-docker2</code>。 有关 <code>nvidia-container-runtime</code> 和 <code>nvidia-docker2</code> 的详细对比，请参考<a href="https://github.com/NVIDIA/nvidia-docker/issues/1268#issuecomment-632692949">这里</a>。</li>
+        <li><b>GPU驱动已被正确安装。</b> 您可以用<a href="./installation-faqs-and-troubleshooting.md#how-to-check-whether-the-gpu-driver-is-installed">这个命令</a>来检查。 如果您的GPU驱动未被正确安装，可以参考<a href="./installation-faqs-and-troubleshooting.md#how-to-install-gpu-driver">如何安装GPU驱动</a>。如果您对安装哪个版本的GPU驱动有疑问，可以阅读<a href="./installation-faqs-and-troubleshooting.md#which-version-of-nvidia-driver-should-i-install">这个文档</a>。</li>
+        <li><b><a href="https://github.com/NVIDIA/nvidia-container-runtime">nvidia-container-runtime</a>已被正确安装，并且被设置为Docker的默认runtime。</b> 因为systemd的配置会在接下来安装过程中被覆盖，所以请不要在systemd里设置 docker 默认runtime，而是在<a href="https://docs.docker.com/config/daemon/#configure-the-docker-daemon">docker-config-file (daemon.json)</a>里进行设置。 您可以使用命令<code>sudo docker run --rm nvidia/cuda:10.0-base nvidia-smi</code> 来检查这一项。如果该命令成功打出当前可用的显卡个数，就说明设置是没问题的。如果它未被正确安装，请参考<a href="./installation-faqs-and-troubleshooting.md#how-to-install-nvidia-container-runtime">如何安装nvidia container runtime</a>。 我们不推荐您使用<code>nvidia-docker2</code>。 有关 <code>nvidia-container-runtime</code> 和 <code>nvidia-docker2</code> 的详细对比，请参考<a href="https://github.com/NVIDIA/nvidia-docker/issues/1268#issuecomment-632692949">这里</a>。</li>
       </ul>
     </td>
   </tr>
@@ -156,22 +156,18 @@ hivedscheduler是OpenPAI的默认调度器，它支持虚拟集群划分，拓�
 在dev box机器上，使用下面的命令来克隆OpenPAI的repo：
 
 ```bash
-git clone https://github.com/microsoft/pai.git
+git clone https://github.com/openxpu/pai.git
 cd pai
 ```
 
 checkout到某一个tag，来选择需要安装的OpenPAI版本：
 
 ```bash
-git checkout v1.8.1
+git checkout v1.8.2
 ```
 
 接下来，请编辑`<pai-code-dir>/contrib/kubespray/config`目录下的`layout.yaml`和`config.yaml`文件。
 这两个文件分别指定了集群的机器组成和自定义设置。下面是示例：
-
-#### 关于中国用户的提示
-
-在中国安装会有一些网络问题，在开始前，请先阅读[这个issue](https://github.com/microsoft/pai/issues/5592)。
 
 #### <div id="layoutyaml-format">`layout.yaml` 格式示例</div>
 
@@ -221,7 +217,7 @@ machine-list:
 ``` yaml
 user: forexample
 password: forexample
-docker_image_tag: v1.8.1
+docker_image_tag: v1.8.2
 
 # Optional
 
@@ -239,7 +235,7 @@ docker_image_tag: v1.8.1
 # OpenPAI's service image registry. #
 #####################################
 # docker_registry_domain: docker.io
-# docker_registry_namespace: openpai
+# docker_registry_namespace: openxpu
 # docker_registry_username: exampleuser
 # docker_registry_password: examplepasswd
 
@@ -336,6 +332,12 @@ cd <pai-code-dir>/contrib/kubespray
 /bin/bash quick-start-kubespray.sh
 ```
 
+如果您是在中国国内安装，请使用以下命令：
+
+``` bash
+/bin/bash quick-start-kubespray.sh -c
+```
+
 安装过程中默认不显示`skip`和`ok`类型的ansible log。如需查看更完全的ansible log，请使用`verbose`模式：
 
 ``` bash
@@ -388,7 +390,7 @@ You can go to http://<your-master-ip>, then use the default username and passwor
 
 正如这个提示所说的，您可以用 `admin` 和 `admin-password` 来登录Webportal，并提交一个任务来验证安装。另外，我们已在目录`~/pai-deploy/cluster-cfg`下生成了OpenPAI的配置文件，如果您之后需要自定义集群的话，这些配置文件有可能会被用到。
 
-**如果您使用的worker是CPU worker、NVIDIA GPU worker、AMD GPU worker、Enflame DTU worker之外的worker种类**: 请在集群中手动安装设备的device plugin，否则会无法使用Kubernetes default scheduler。 目前可以自动安装的device plugin被列在[这个文件中](https://github.com/microsoft/pai/blob/master/src/device-plugin/deploy/start.sh.template)。您可以提交PR来支持您的设备。
+**如果您使用的worker是CPU worker、NVIDIA GPU worker、AMD GPU worker、Enflame DTU worker之外的worker种类**: 请在集群中手动安装设备的device plugin，否则会无法使用Kubernetes default scheduler。 目前可以自动安装的device plugin被列在[这个文件中](https://github.com/openxpu/pai/blob/master/src/device-plugin/deploy/start.sh.template)。您可以提交PR来支持您的设备。
 
 ## <div id="keep-a-folder">保留一个文件夹</div>
 
