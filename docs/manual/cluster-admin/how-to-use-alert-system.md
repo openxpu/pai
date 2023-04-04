@@ -216,17 +216,17 @@ For example, the `stop-jobs` action is realized by calling the `localhost:9095/a
 the request is then forward to the OpenPAI Rest Server to stop the job.
 You can add new APIs in `alert-handler` and adapt the request to realize the required action.
 
-The source code of `alert-handler` is available [here](https://github.com/microsoft/pai/blob/master/src/alert-manager/src/alert-handler).
+The source code of `alert-handler` is available [here](https://github.com/openxpu/pai/blob/master/src/alert-manager/src/alert-handler).
 
 #### Check the dependencies of the action
 
 As stated before, to make an action available, administrators need to provide the necessary configurations.
-Check this [folder](https://github.com/microsoft/pai/tree/master/src/alert-manager/config) and define the dependencies' rules for your customized actions.
+Check this [folder](https://github.com/openxpu/pai/tree/master/src/alert-manager/config) and define the dependencies' rules for your customized actions.
 
 #### Render the action to webhook configurations
 
 When customized receivers are defined in `service-configuration.yml`,
-the `actions` will then be rendered as webhook_configs [here](https://github.com/microsoft/pai/blob/master/src/alert-manager/deploy/alert-manager-configmap.yaml.template).
+the `actions` will then be rendered as webhook_configs [here](https://github.com/openxpu/pai/blob/master/src/alert-manager/deploy/alert-manager-configmap.yaml.template).
 
 The actions we provide, `email-admin`, `email-user`, `stop-jobs`, `tag-jobs`, and `cordon-nodes`, can be called within `alert-manager` by sending POST requests to `alert-handler`:
 
@@ -240,7 +240,7 @@ The request body will be automatically filled by `alert-manager` with `webhook`
 and `alert-handler` will adapt the requests to various actions.
 
 Please define how to render your customized action to the `alert-handler` API request
-[here](https://github.com/microsoft/pai/blob/master/src/alert-manager/src/alert-handler)
+[here](https://github.com/openxpu/pai/blob/master/src/alert-manager/src/alert-handler)
 
 Remember to re-build and push the docker image, and restart the `alert-manager` service after your modification with the following commands in the dev-box container:
 

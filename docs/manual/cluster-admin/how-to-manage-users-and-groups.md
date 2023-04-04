@@ -209,4 +209,4 @@ After starting the rest-server, please ensure that the following tasks are succe
 ### Troubleshooting
 
 If the test failed, please delete the rest-server, and then start it again.
-If it fails again, please provide detailed information and [create an issue in Github](https://github.com/microsoft/pai/issues/new/choose).
+If it fails again, please provide detailed information and [create an issue in Github](https://github.com/openxpu/pai/issues/new/choose).
