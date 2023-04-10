@@ -1,9 +1,17 @@
 # Copyright (c) Microsoft Corporation.
+# Copyright (c) 2023 xpucube.com. All rights reserved.
+#
 # Licensed under the MIT License.
 
-FROM ubuntu:16.04
+FROM ubuntu:18.04
+
+ARG DEBIAN_FRONTEND=noninteractive
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
 
 RUN apt-get -y update && \
+    apt-get -y upgrade && \
+    apt-get -y install --no-install-recommends apt-utils && \
     apt-get -y install \
       nano \
       vim \
@@ -13,20 +21,14 @@ RUN apt-get -y update && \
       jq \
       gawk \
       psmisc \
-      python \
       python3 \
-      python-yaml \
-      python-jinja2 \
-      python-urllib3 \
-      python-tz \
-      python-nose \
-      python-prettytable \
-      python-netifaces \
-      python-dev \
-      python3-dev \
-      python-pip \
       python3-pip \
-      python-mysqldb \
+      python3-tz \
+      python3-nose \
+      python3-prettytable \
+      python3-netifaces \
+      python3-dev \
+      python3-mysqldb \
       openjdk-8-jre \
       openjdk-8-jdk \
       openssh-server \
@@ -37,14 +39,16 @@ RUN apt-get -y update && \
       bash-completion \
       inotify-tools \
       rsync \
-      realpath \
+      coreutils \
       nfs-common \
-      net-tools && \
-    mkdir -p /cluster-configuration &&\
-    git clone https://github.com/Microsoft/pai.git &&\
-    pip install bcrypt==3.1.7 dnspython==1.16.0 python-etcd docker kubernetes==12.0.0 paramiko==2.6.0 cryptography==3.2 cachetools==3.1.1 GitPython==2.1.15 jsonschema attrs dicttoxml beautifulsoup4 future setuptools==44.1.0 &&\
-    python -m easy_install --upgrade pyOpenSSL && \
-    pip3 install kubernetes==12.0.0 jinja2
+      net-tools \
+      sshpass && \
+    ln -s python3 /usr/bin/python && \
+    mkdir -p /cluster-configuration && \
+    git clone https://github.com/openxpu/pai.git && \
+    python3 -m pip install --upgrade --ignore-installed pip && \
+    python3 -m pip install --ignore-installed setuptools==46.1.0 && \
+    python3 -m pip install pyOpenSSL jinja2 netaddr passlib PyYAML urllib3 bcrypt dnspython python-etcd docker kubernetes==12.0.0 paramiko cryptography cachetools GitPython jsonschema attrs dicttoxml beautifulsoup4 future
 
 WORKDIR /tmp
 
@@ -75,8 +79,8 @@ ENV PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bi
 
 
 # Only node manager need this.#
-RUN wget https://download.docker.com/linux/static/stable/x86_64/docker-17.06.2-ce.tgz
-RUN tar xzvf docker-17.06.2-ce.tgz
+RUN wget https://download.docker.com/linux/static/stable/x86_64/docker-20.10.7.tgz
+RUN tar xzvf docker-20.10.7.tgz
 RUN mv docker/* /usr/local/bin/
 
 # alert manager tool
@@ -95,16 +99,17 @@ RUN apt-get -y install apt-transport-https &&  \
     apt-get -y install azure-cli
 
 RUN wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+# RUN wget https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl
+# kubectl version that is within one minor version difference of the cluster.
+# RUN wget https://dl.k8s.io/release/v1.16.15/bin/linux/amd64/kubectl
 RUN chmod +x kubectl
 RUN mv kubectl /usr/local/bin
 
 # reinstall requests otherwise will get error: `cannot import name DependencyWarning`
-RUN echo y | pip uninstall requests && \
-    echo y | pip install requests && \
-    echo y | pip install docopt && \
-    echo y | pip3 uninstall requests && \
-    echo y | pip3 install requests && \
-    echo y | pip3 install docopt
+RUN echo y | python3 -m pip uninstall requests && \
+    echo y | python3 -m pip install requests && \
+    echo y | python3 -m pip install docopt && \
+    echo y | python3 -m pip install ansible==2.9.24
 
 RUN rm -rf /tmp/*
 

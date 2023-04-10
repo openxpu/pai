@@ -671,6 +671,15 @@ const generateTaskRole = (
         });
       }
     }
+	// OPENXPU
+	frameworkTaskRole.task.pod.spec.containers[0].env.push({
+	  name: 'OPENXPU_XPU_SHARES',
+	  valueFrom: {
+        fieldRef: {
+          fieldPath: `metadata.annotations['hivedscheduler.microsoft.com/pod-leaf-cell-xpus']`,
+        },
+      },
+	});
   }
 
   return frameworkTaskRole;

@@ -33,7 +33,7 @@ def is_label_exist(key, value):
     try:
         node_list = v1.list_node(label_selector="{0}={1}".format(key, value), watch=False)
     except ApiException as e:
-        print "Exception when calling CoreV1Api->list_node: %s\n" % e
+        print("Exception when calling CoreV1Api->list_node: %s\n" % e)
         sys.exit(1)
 
     if len(node_list.items) == 0:

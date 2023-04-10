@@ -4,14 +4,14 @@ from deployment.confStorage.download import download_configuration
 from deployment.confStorage.synchronization import Synchronization
 from deployment.confStorage.external_version_control.external_config import uploading_external_config
 from deployment.confStorage.get_cluster_id import get_cluster_id
-from utility import pai_version
+from .utility import pai_version
 
 import logging
 import logging.config
 import importlib
-from paiLibrary.common import file_handler
-from paiLibrary.common import template_handler
-from k8sPaiLibrary.maintainlib import common as pai_common
+from .paiLibrary.common import file_handler
+from .paiLibrary.common import template_handler
+from .k8sPaiLibrary.maintainlib import common as pai_common
 
 
 logger = logging.getLogger(__name__)

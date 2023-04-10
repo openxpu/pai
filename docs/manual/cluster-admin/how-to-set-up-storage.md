@@ -201,7 +201,7 @@ Before querying the API, you should get an access token for the API. Go to your 
 
 <img src="./imgs/get-token.png" />
 
-In OpenPAI, storage is bound to group. Thus you use the [Group API](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#tag/group) to assign storage to groups. [Get a group](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#operation/getGroup) first, and then [Update its extension](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#operation/updateGroup).
+In OpenPAI, storage is bound to group. Thus you use the [Group API](https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#tag/group) to assign storage to groups. [Get a group](https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#operation/getGroup) first, and then [Update its extension](https://raw.githubusercontent.com/microsoft/pai/master/src/rest-server/docs/swagger.yaml#operation/updateGroup).
 
 For example, if you want to assign `nfs-storage` PVC to `default` group. First, GET `http(s)://<pai-master-ip>/rest-server/api/v2/groups/default`, it will return:
 

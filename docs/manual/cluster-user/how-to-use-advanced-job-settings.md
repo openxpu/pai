@@ -102,11 +102,11 @@ You can also export and import YAML files using the `Export` and `Import` button
 
    <img src="./imgs/export-and-import.png" width="100%" height="100%" />
 
-To see a full reference of job protocol, please check [job protocol](https://github.com/microsoft/openpai-protocol/blob/master/schemas/v2/schema.yaml).
+To see a full reference of job protocol, please check [job protocol](https://github.com/openxpu/openpai-protocol/blob/master/schemas/v2/schema.yaml).
 
 ## Use Prerequisites
 
-[OpenPAI protocol](https://github.com/microsoft/openpai-protocol/blob/master/schemas/v2/schema.yaml) support users to specify different types of prerequisites (e.g. dockerimage, data, and script) and then reference them in each task role. We consider prerequisites as *sharable* parts in the job protocol. For example, one dataset can be defined as a prerequisite, and can be used by multiple jobs.
+[OpenPAI protocol](https://github.com/openxpu/openpai-protocol/blob/master/schemas/v2/schema.yaml) support users to specify different types of prerequisites (e.g. dockerimage, data, and script) and then reference them in each task role. We consider prerequisites as *sharable* parts in the job protocol. For example, one dataset can be defined as a prerequisite, and can be used by multiple jobs.
 
 Here's one example to use prerequisites:
 
@@ -215,11 +215,11 @@ But OpenPAI may fail to catch the `running` status change if the job fails very 
 
 ### TensorFlow CIFAR10
 
-This example is a TensorFlow CIFAR-10 training job, which runs a parameter server and a worker. This job needs at least 5 GPUs. Please refer to [tensorflow-cifar10.yaml](https://github.com/microsoft/pai/blob/master/marketplace-v2/tensorflow-cifar10.yaml).
+This example is a TensorFlow CIFAR-10 training job, which runs a parameter server and a worker. This job needs at least 5 GPUs. Please refer to [tensorflow-cifar10.yaml](https://github.com/openxpu/pai/blob/master/marketplace-v2/tensorflow-cifar10.yaml).
 
 ### Horovod PyTorch
 
-This example, [horovod-pytorch-synthetic-benchmark.yaml](https://github.com/microsoft/pai/blob/master/marketplace-v2/horovod-pytorch-synthetic-benchmark.yaml), is a Horovod benchmark using PyTorch and Open MPI. Please make sure the `IFNAME` setting in the job yaml fits your environment. It needs at least 8 GPUs.
+This example, [horovod-pytorch-synthetic-benchmark.yaml](https://github.com/openxpu/pai/blob/master/marketplace-v2/horovod-pytorch-synthetic-benchmark.yaml), is a Horovod benchmark using PyTorch and Open MPI. Please make sure the `IFNAME` setting in the job yaml fits your environment. It needs at least 8 GPUs.
 
 ## InfiniBand Jobs
 
@@ -300,6 +300,6 @@ and HCA name and network interface name are set correctly.
 
 ## Reference
 
- - [Job Protocol](https://github.com/microsoft/openpai-protocol/blob/master/schemas/v2/schema.yaml)
- - [PAI Job Exit Spec User Manual](https://github.com/microsoft/pai/blob/master/src/k8s-job-exit-spec/config/user-manual.md)
- - [Retry Policy](https://github.com/microsoft/frameworkcontroller/blob/master/doc/user-manual.md#retrypolicy)
+ - [Job Protocol](https://github.com/openxpu/openpai-protocol/blob/master/schemas/v2/schema.yaml)
+ - [PAI Job Exit Spec User Manual](https://github.com/openxpu/pai/blob/master/src/k8s-job-exit-spec/config/user-manual.md)
+ - [Retry Policy](https://github.com/openxpu/frameworkcontroller/blob/master/doc/user-manual.md#retrypolicy)

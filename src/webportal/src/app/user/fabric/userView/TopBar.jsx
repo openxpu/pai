@@ -93,6 +93,8 @@ function TopBar() {
     removeUsers,
     editUser,
     showBatchPasswordEditor,
+    showBatchQuotaEditor,
+    showBatchAdditionalInformationEditor,
     showBatchVirtualClustersEditor,
   } = useContext(Context);
 
@@ -185,6 +187,19 @@ function TopBar() {
   };
 
   /**
+   * @type {import('office-ui-fabric-react').ICommandBarItemProps}
+   */
+  const btnBatchEditQuota = {
+    key: 'batchEditQuota',
+    name: 'Batch Edit Quotas',
+    buttonStyles: transparentStyles,
+    iconProps: {
+      iconName: 'EditStyle',
+    },
+    onClick: showBatchQuotaEditor,
+  };
+
+  /**
    * btnBatchEditVirtualClusters
    * @type {import('office-ui-fabric-react').ICommandBarItemProps}
    */
@@ -214,6 +229,19 @@ function TopBar() {
         </TooltipHost>
       );
     },
+  };
+
+  /**
+   * @type {import('office-ui-fabric-react').ICommandBarItemProps}
+   */
+  const btnBatchEditAdditionalInformation = {
+    key: 'batchEditAdditionalInformation',
+    name: 'Batch Edit User Additional Information',
+    buttonStyles: transparentStyles,
+    iconProps: {
+      iconName: 'EditStyle',
+    },
+    onClick: showBatchAdditionalInformationEditor,
   };
 
   /**
@@ -424,6 +452,8 @@ function TopBar() {
   if (selected) {
     if (selectedMulti) {
       topBarItems.push(btnBatchEditPassword);
+      topBarItems.push(btnBatchEditQuota);
+      topBarItems.push(btnBatchEditAdditionalInformation);
       if (selectedAdmin) {
         const disabledTip =
           'Unable to do this for administrators, please make sure the multi-option does not include an administrator';

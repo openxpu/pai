@@ -69,25 +69,24 @@ docker_registry_namespace: openxpu
 #                       kubespray setting                             #
 #######################################################################
 
-# If you couldn't access to gcr.io or docker.io, please configure it.
-# gcr_image_repo: "gcr.io"
-# kube_image_repo: "gcr.io/google-containers"
-# quay_image_repo: "quay.io"
-# docker_image_repo: "docker.io"
-# etcd_image_repo: "quay.io/coreos/etcd"
-# pod_infra_image_repo: "gcr.io/google_containers/pause-{{ image_arch }}"
-# kubeadm_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
-# hyperkube_download_url: "https://storage.googleapis.com/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/hyperkube"
-
+openpai_kubespray_extra_var:
+  # If you couldn't access to gcr.io or docker.io, please configure it.
+  gcr_image_repo: "openxpu"
+  kube_image_repo: "openxpu"
+  # quay_image_repo: "quay.io"
+  # docker_image_repo: "docker.io"
+  # etcd_image_repo: "quay.io/coreos/etcd"
+  pod_infra_image_repo: "openxpu/pause-{{ image_arch }}"
+  kubeadm_download_url: "http://down.openxpu.com/openpai/kubernetes/kubernetes-release/release/{{ kubeadm_version }}/bin/linux/{{ image_arch }}/kubeadm"
+  hyperkube_download_url: "http://down.openxpu.com/openpai/kubernetes/kubernetes-release/release/{{ kube_version }}/bin/linux/{{ image_arch }}/hyperkube"
 # openpai_kube_network_plugin: calico
-
-# openpai_kubespray_extra_var:
-#   key: value
-#   key: value
+  dnsautoscaler_image_repo: "openxpu/cluster-proportional-autoscaler-{{ image_arch }}"
+  cni_download_url: "http://down.openxpu.com/openpai/kubernetes/containernetworking/plugins/releases/download/{{ cni_version }}/cni-plugins-linux-{{ image_arch }}-{{ cni_version }}.tgz"
+  calicoctl_download_url: "http://down.openxpu.com/openpai/kubernetes/projectcalico/calicoctl/releases/download/{{ calico_ctl_version }}/calicoctl-linux-{{ image_arch }}"
 
 # Ref: https://github.com/microsoft/pai/issues/5150
-# kubelet_custom_flags:
-#   serialize-image-pulls: "false"
+kubelet_custom_flags:
+  serialize-image-pulls: "false"
 
 #######################################################################
 #                     host daemon port setting                        #

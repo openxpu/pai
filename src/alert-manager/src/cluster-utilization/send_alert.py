@@ -19,6 +19,8 @@ REST_JOB_API_PREFIX = "/rest-server/api/v2/jobs?order=completionTime,DESC"
 TOKEN = os.environ.get('PAI_BEARER_TOKEN')
 PROMETHEUS_SCRAPE_INTERVAL = int(os.environ.get('PROMETHEUS_SCRAPE_INTERVAL'))
 
+TIMEOUT = 10
+
 def enable_request_debug_log(func):
     def wrapper(*args, **kwargs):
         requests_log = logging.getLogger("urllib3")
@@ -73,7 +75,7 @@ def get_related_jobs(rest_url):
     limit = 5000
     headers = {'Authorization': f"Bearer {TOKEN}"}
     while True:
-        resp = requests.get(rest_url+f"limit={limit}&offset={offset}", headers=headers)
+        resp = requests.get(rest_url+f"limit={limit}&offset={offset}", headers=headers, timeout=TIMEOUT)
         resp.raise_for_status()
         jobs = resp.json()
         jobs_related += jobs
@@ -165,25 +167,25 @@ def collect_metrics(url):
 
     # cluster info
     logging.info("Collecting cluster usage info...")
-    resp = requests.get(query_url, params={"query": CLUSTER_QUERY_STRING})
+    resp = requests.get(query_url, params={"query": CLUSTER_QUERY_STRING}, timeout=TIMEOUT)
     resp.raise_for_status()
     result = resp.json()
     cluster_usage = result["data"]["result"][0]["value"][1][:6] + "%"
 
     # user info
     logging.info("Collecting user usage info...")
-    resp = requests.get(query_url, params={"query": USER_QUERY_STRING})
+    resp = requests.get(query_url, params={"query": USER_QUERY_STRING}, timeout=TIMEOUT)
     resp.raise_for_status()
     user_usage_result = resp.json()
 
     # job info
     logging.info("Collecting job usage info...")
     # job gpu percent
-    resp = requests.get(query_url, params={"query": JOB_GPU_PERCENT})
+    resp = requests.get(query_url, params={"query": JOB_GPU_PERCENT}, timeout=TIMEOUT)
     resp.raise_for_status()
     job_gpu_percent = resp.json()
     # job gpu hours
-    resp = requests.get(query_url, params={"query": JOB_GPU_HOURS})
+    resp = requests.get(query_url, params={"query": JOB_GPU_HOURS}, timeout=TIMEOUT)
     resp.raise_for_status()
     job_gpu_hours = resp.json()
 
@@ -256,7 +258,7 @@ def send_alert(pai_url: str, cluster_usage, job_usage, user_usage):
         alerts.append(alert)
 
     logging.info("Sending alerts to alert-manager...")
-    resp = requests.post(post_url, json=alerts)
+    resp = requests.post(post_url, json=alerts, timeout=TIMEOUT)
     resp.raise_for_status()
     logging.info("Alerts sent to alert-manager.")
 

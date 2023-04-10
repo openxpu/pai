@@ -87,7 +87,7 @@ class cluster_object_model:
     def load_config(self, parser_dict):
         # Pre Validation
         self.logger.info("Begin to do pre-validation for each service parser.")
-        for key in parser_dict.iterkeys():
+        for key in parser_dict.keys():
             value = parser_dict[key]
             self.logger.info("Begin to do pre-validation of {0}".format(key))
             ok, msg = value.validation_pre()
@@ -101,7 +101,7 @@ class cluster_object_model:
 
         # Generate object model
         self.logger.info("Begin to do generate cluster object model.")
-        for key in parser_dict.iterkeys():
+        for key in parser_dict.keys():
             value = parser_dict[key]
             self.logger.info("Begin to do generate object model of {0}.".format(key))
             cluster_object_model[key] = value.run()
@@ -110,7 +110,7 @@ class cluster_object_model:
 
         # Post Validation
         self.logger.info("Begin to do post-validation.")
-        for key in parser_dict.iterkeys():
+        for key in parser_dict.keys():
             value = parser_dict[key]
             self.logger.info("Begin to do post-validation of {0}.".format(key))
             ok, msg = value.validation_post(cluster_object_model)

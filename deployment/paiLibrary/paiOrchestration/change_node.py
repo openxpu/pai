@@ -19,8 +19,8 @@ import os
 import yaml
 import logging
 
-import temp_config
-import temp_kubespray
+from . import temp_config
+from . import temp_kubespray
 from ..common import linux_shell
 from ...confStorage.upload import UploadConfiguration
 

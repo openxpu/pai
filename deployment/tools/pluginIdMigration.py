@@ -17,8 +17,8 @@ print("Usage: pluginIdMigration.py from_directory to_directory")
 
 input_dir = os.path.expanduser(sys.argv[1])
 output_dir = os.path.expanduser(sys.argv[2])
-print "Input directory:", input_dir
-print "Output directory:", output_dir
+print("Input directory:", input_dir)
+print("Output directory:", output_dir)
 
 # Migrate services-configuration.yaml
 print("Migrating services-configuration.yaml...")
@@ -30,7 +30,7 @@ if "webportal" in services_config and "plugins" in services_config["webportal"]:
         if "id" not in plugin:
             plugin["id"] = slugify(plugin["title"])
 else:
-    print "No webportal plugins to convert"
+    print("No webportal plugins to convert")
 
 
 # write out the file

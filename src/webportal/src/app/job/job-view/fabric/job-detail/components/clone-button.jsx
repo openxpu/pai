@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 import qs from 'querystring';
 import { get, isNil } from 'lodash';
 import { PrimaryButton } from 'office-ui-fabric-react';
-import { isClonable, isJobV2 } from '../util';
+import { isClonable, isJobV2, isJobSingle } from '../util';
 import Context from './context';
 
 const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
@@ -28,12 +28,14 @@ const CloneButton = ({ rawJobConfig, namespace, jobName, enableTransfer }) => {
     // TODO: align same format of jobname with each submit ways
     const queryOld = {
       op: 'resubmit',
+      single: isJobSingle(rawJobConfig),
       type: 'job',
       user: namespace,
       jobname: jobName,
     };
     const queryNew = {
       op: 'resubmit',
+      single: isJobSingle(rawJobConfig),
       type: 'job',
       user: namespace,
       jobName: jobName,

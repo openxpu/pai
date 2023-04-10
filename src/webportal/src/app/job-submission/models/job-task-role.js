@@ -59,7 +59,7 @@ export class JobTaskRole {
     this.commands = commands || '';
     this.completion = completion || new Completion({});
     this.deployment = deployment || new Deployment({});
-    this.hivedSku = hivedSku || { skuNum: 1, skuType: null, sku: null };
+    this.hivedSku = hivedSku || { skuNum: 1, skuType: null, skuPercent: 100, sku: null };
     this.containerSize = containerSize || getDefaultContainerSize();
     this.isContainerSizeEnabled = isContainerSizeEnabled || false;
     this.taskRetryCount = taskRetryCount || 0;
@@ -107,7 +107,7 @@ export class JobTaskRole {
       infiniband: get(taskRoleProtocol, 'extraContainerOptions.infiniband'),
     });
 
-    const hivedSku = { skuNum: 1, skuType: null, sku: null };
+    const hivedSku = { skuNum: 1, skuType: null, skuPercent: 100, sku: null };
     if (config.launcherScheduler === 'hivedscheduler') {
       hivedSku.skuNum = get(
         extras,
@@ -119,6 +119,12 @@ export class JobTaskRole {
         `hivedScheduler.taskRoles.${name}.skuType`,
         null,
       );
+      hivedSku.skuPercent = get(
+        extras,
+        `hivedScheduler.taskRoles.${name}.skuPercent`,
+        null,
+      );
+
     }
 
     const jobTaskRole = new JobTaskRole({
@@ -171,8 +177,18 @@ export class JobTaskRole {
     ) {
       [['gpu', 'gpu'], ['cpu', 'cpu'], ['memoryMB', 'memory']].forEach(
         ([k1, k2]) => {
-          resourcePerInstance[k1] =
-            this.hivedSku.skuNum * this.hivedSku.sku[k2];
+	  if (k1 === 'gpu') {
+            resourcePerInstance[k1] =
+              this.hivedSku.skuNum * this.hivedSku.sku[k2];
+	  }
+	  if (k1 === 'cpu') {
+            resourcePerInstance[k1] =
+              this.hivedSku.skuNum * (Math.round(Math.max(1, this.hivedSku.sku[k2] * this.hivedSku.skuPercent / 100)));
+	  }
+	  if (k1 === 'memoryMB') {
+            resourcePerInstance[k1] =
+              this.hivedSku.skuNum * (Math.round(Math.max(1024, this.hivedSku.sku[k2] * this.hivedSku.skuPercent / 100)));
+	  }
         },
       );
     }
@@ -202,6 +218,7 @@ export class JobTaskRole {
       hivedTaskRole[this.name] = {
         skuNum: this.hivedSku.skuNum,
         skuType: this.hivedSku.skuType,
+        skuPercent: this.hivedSku.skuPercent,
       };
     }
 

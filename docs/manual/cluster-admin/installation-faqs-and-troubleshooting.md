@@ -121,7 +121,7 @@ Please refer to the [official document](https://github.com/NVIDIA/nvidia-contain
 
 #### How to deploy on [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/en-us/services/kubernetes-service/) with [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler)?
 
-Please refer to [this document](https://github.com/microsoft/pai/tree/master/contrib/aks-engine).
+Please refer to [this document](https://github.com/openxpu/pai/tree/master/contrib/aks-engine).
 
 ## Troubleshooting
 
@@ -163,7 +163,7 @@ The same as `1. Ansible playbook exits because of timeout.`
 
 #### Ansible reports `Could not import python modules: apt, apt_pkg. Please install python3-apt package.`
 
-Sometimes it is not fixable even you have the `python3-apt` package installed. In this case, please manually add `-e ansible_python_interpreter=/usr/bin/python3` to [this line](https://github.com/microsoft/pai/blob/42bcfb985d0baf05313190a5ac8a237a35133d73/contrib/kubespray/script/kubernetes-boot.sh#L5) in your local code.
+Sometimes it is not fixable even you have the `python3-apt` package installed. In this case, please manually add `-e ansible_python_interpreter=/usr/bin/python3` to [this line](https://github.com/openxpu/pai/blob/42bcfb985d0baf05313190a5ac8a237a35133d73/contrib/kubespray/script/kubernetes-boot.sh#L5) in your local code.
 
 #### Network-related Issues
 

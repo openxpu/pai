@@ -22,7 +22,8 @@ RUN apk add --no-cache --update --virtual .build-deps \
         sudo build-base ruby-dev make gcc libc-dev postgresql-dev git \
  && apk add --no-cache --update libpq \
  && sudo gem install fluent-plugin-concat \
- && sudo gem install rake bundler pg \
+ && sudo gem install bundler -v2.3.26 \
+ && sudo gem install rake pg \
  && sudo apk add ruby-bigdecimal
 
 # Build fluent-plugin-pgjson from scratch

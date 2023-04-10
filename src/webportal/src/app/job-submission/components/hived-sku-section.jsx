@@ -10,11 +10,19 @@ import { CSpinButton } from './customized-components';
 import { FormShortSection } from './form-page';
 import { PROTOCOL_TOOLTIPS } from '../utils/constants';
 import Context from './context';
+import webportalConfig from '../../config/webportal.config';
 
 export const HivedSkuSection = React.memo(props => {
-  const { value, onChange } = props;
-  const { skuNum, skuType } = value;
+  const { value, isSingle, onChange } = props;
+  const { skuNum, skuType, skuPercent } = value;
   const { hivedSkuTypes } = useContext(Context);
+
+  const skuPercentOptions = [
+    {key: 25,  text: '25%'},
+    {key: 50,  text: '50%'},
+    {key: 75,  text: '75%'},
+    {key: 100, text: '100%'},
+  ];
 
   const skuOptions = useMemo(
     () =>
@@ -38,13 +46,14 @@ export const HivedSkuSection = React.memo(props => {
       if (selected == null) {
         onChange({ ...value, skuType: null, sku: null });
       } else if (value.sku == null) {
-        onChange({ ...value, sku: get(selected, 'sku', null) });
+        onChange({ ...value, sku: get(selected, 'sku', null), skuPerCent: skuPercentOptions[3].key });
       }
     } else if (!isEmpty(skuOptions)) {
       onChange({
         ...value,
         skuType: skuOptions[0].key,
         sku: skuOptions[0].sku,
+        skuPercent: skuPercentOptions[3].key,
       });
     }
   };
@@ -54,6 +63,16 @@ export const HivedSkuSection = React.memo(props => {
       onChange({
         ...value,
         skuNum: num,
+      });
+    },
+    [onChange],
+  );
+
+  const _onSkuPercentChange = useCallback(
+    (_, item) => {
+      onChange({
+        ...value,
+        skuPercent: item.key,
       });
     },
     [onChange],
@@ -78,13 +97,28 @@ export const HivedSkuSection = React.memo(props => {
     >
       <FormShortSection gap='m'>
         <Stack horizontal verticalAlign='baseline'>
-          <div style={{ width: '20%' }}>SKU count</div>
+          <div style={{ width: '20%' }}>SKU Count</div>
           <Stack.Item grow>
             <CSpinButton value={skuNum} min={1} onChange={_onSkuNumChange} />
           </Stack.Item>
         </Stack>
+	{ webportalConfig.xpuEnabled === 'true' && (
+          <Stack horizontal verticalAlign='baseline'>
+            <div style={{ width: '20%' }}>SKU vGPU Size</div>
+            <Stack.Item grow>
+              <Dropdown
+                placeholder='Select SKU vGPU size in percent'
+                options={skuPercentOptions}
+                onChange={_onSkuPercentChange}
+                selectedKey={skuPercent}
+                disabled={!isSingle}
+                errorMessage={!isSingle ? 'The vGPU function for Distributed Tasks will be available shortly.' : null}
+              />
+            </Stack.Item>
+          </Stack>
+	)}
         <Stack horizontal verticalAlign='baseline'>
-          <div style={{ width: '20%' }}>SKU type</div>
+          <div style={{ width: '20%' }}>SKU Type</div>
           <Stack.Item grow>
             <Dropdown
               placeholder='Select SKU type'
@@ -101,5 +135,6 @@ export const HivedSkuSection = React.memo(props => {
 
 HivedSkuSection.propTypes = {
   value: PropTypes.object.isRequired,
+  isSingle: PropTypes.bool,
   onChange: PropTypes.func,
 };

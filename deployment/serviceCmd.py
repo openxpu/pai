@@ -21,10 +21,10 @@ import readline
 import logging
 import logging.config
 
-from paiLibrary.paiService import service_management_start
-from paiLibrary.paiService import service_management_stop
-from paiLibrary.paiService import service_management_delete
-from paiLibrary.paiService import service_management_refresh
+from .paiLibrary.paiService import service_management_start
+from .paiLibrary.paiService import service_management_stop
+from .paiLibrary.paiService import service_management_delete
+from .paiLibrary.paiService import service_management_refresh
 
 logger = logging.getLogger(__name__)
 
@@ -99,7 +99,7 @@ class ServiceCmd():
 
         count_input = 0
         while True:
-            user_input = raw_input("Do you want to continue this operation? (Y/N) ")
+            user_input = input("Do you want to continue this operation? (Y/N) ")
             if user_input == "N":
                 return
             elif user_input == "Y":

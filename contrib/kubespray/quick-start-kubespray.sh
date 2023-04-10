@@ -1,21 +1,37 @@
 #!/bin/bash
 
-if getopts "v" opt; then
+CONFIGCN=0
+VERBOSE=0
+
+while getopts "cv" opt; do
   case $opt in
+    c)
+      CONFIGCN=1
+      ;;
     v)
-      export ANSIBLE_DISPLAY_OK_HOSTS=yes
-      export ANSIBLE_DISPLAY_SKIPPED_HOSTS=yes
-      export ANSIBLE_CALLBACK_WHITELIST="profile_tasks"
+      VERBOSE=1
       ;;
     \?)
       echo "Invalid option: -$OPTARG"
       exit 1
       ;;
   esac
+done
+
+if [ $CONFIGCN -eq 1 ]; then
+  if [ -f ./config/config-cn.yaml ]; then
+    cd config && rm -rf config.yaml && mv config-cn.yaml config.yaml && cd ..
+  fi
+fi
+
+if [ $VERBOSE -eq 1 ]; then
+  export ANSIBLE_DISPLAY_OK_HOSTS=yes
+  export ANSIBLE_DISPLAY_SKIPPED_HOSTS=yes
+  export ANSIBLE_CALLBACK_WHITELIST="profile_tasks"
 else
-    export ANSIBLE_DISPLAY_OK_HOSTS=no
-    export ANSIBLE_DISPLAY_SKIPPED_HOSTS=no
-    export ANSIBLE_CALLBACK_WHITELIST=""
+  export ANSIBLE_DISPLAY_OK_HOSTS=no
+  export ANSIBLE_DISPLAY_SKIPPED_HOSTS=no
+  export ANSIBLE_CALLBACK_WHITELIST=""
 fi
 
 # assume pwd is pai/contrib/kubespray
