@@ -177,6 +177,7 @@ export class JobTaskRole {
     ) {
       [['gpu', 'gpu'], ['cpu', 'cpu'], ['memoryMB', 'memory']].forEach(
         ([k1, k2]) => {
+          // resize container size with vGPU size defined by XPU
 	  if (k1 === 'gpu') {
             resourcePerInstance[k1] =
               this.hivedSku.skuNum * this.hivedSku.sku[k2];
