@@ -183,11 +183,11 @@ export class JobTaskRole {
 	  }
 	  if (k1 === 'cpu') {
             resourcePerInstance[k1] =
-              this.hivedSku.skuNum * (Math.max(1, this.hivedSku.sku[k2] * this.hivedSku.skuPercent / 100));
+              this.hivedSku.skuNum * (Math.round(Math.max(1, this.hivedSku.sku[k2] * this.hivedSku.skuPercent / 100)));
 	  }
 	  if (k1 === 'memoryMB') {
             resourcePerInstance[k1] =
-              this.hivedSku.skuNum * (Math.max(1024, this.hivedSku.sku[k2] * this.hivedSku.skuPercent / 100));
+              this.hivedSku.skuNum * (Math.round((Math.max(1024, this.hivedSku.sku[k2] * this.hivedSku.skuPercent / 100)));
 	  }
         },
       );
