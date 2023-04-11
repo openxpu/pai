@@ -55,7 +55,7 @@ Note: Please **DO NOT** use `#` for comments or use `\` for line continuation in
 
 **Step 4.** Specify the resources you need. OpenPAI uses **resource SKU** to quantify the resource in one instance. For example, here 1 `DT` SKU means 1 GPU, 5 CPUs, and 53914 MB memory. If you specify one `DT` SKU, you will get a container with 1 GPU, 5 CPUs, and 53914 MB memory. If you specify two `DT` SKUs, you will get a container with 2 GPUs, 10 CPUs, and 107828 MB memory.
 
-**Step 5.** If enabled XPU in OpenPAI, refer to [`How to setup XPU`](./how-to-set-up-xpu.md), you can use vGPU instead of using whole SKU. Thus multiple small tasks can reuse the same GPU, utilize your GPUs completely and eliminate resource starvation
+**Step 5.** If enabled XPU in OpenPAI, refer to [`How to setup XPU`](../cluster-admin/how-to-set-up-xpu.md), you can use vGPU instead of using whole SKU. Thus multiple small tasks can reuse the same GPU, utilize your GPUs completely and eliminate resource starvation
 
 <img src="./imgs/sku-xpu.png" width="90%" height="90%" />
 

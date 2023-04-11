@@ -54,7 +54,7 @@ python train_image_classifier.py --dataset_name=cifar10 --dataset_dir=/tmp/data 
 
 **步骤四：** 指定您需要的资源。在一个实例中，OpenPAI使用 **resource SKU** 来量化资源。例如，此处的 1 个 `DT` SKU 表示 1 个 GPU，5 个 CPU，和 53914MB 内存。如果您指定一个`DT` SKU，您将会得到一个包含 1 个 GPU，5 个 CPU 和 53914MB 内存的容器。如果您指定两个`DT` SKU，则会得到一个包含 2 个 GPU， 10 个 CPU 和 107828MB 内存的容器。
 
-**步骤五：** 如果OpenPAI开启了XPU支持，如何在OpenPAI中启用对XPU的支持，请参考[`如何设置XPU`](./how-to-set-up-xpu.md)，您可以指定使用一定比例的SKU来代替使用整个SKU，这样在面对小任务的时候，可以多个任务复用SKU，提高GPU的利用率。
+**步骤五：** 如果OpenPAI开启了XPU支持，如何在OpenPAI中启用对XPU的支持，请参考[`如何设置XPU`](../cluster-admin/how-to-set-up-xpu.md)，您可以指定使用一定比例的SKU来代替使用整个SKU，这样在面对小任务的时候，可以多个任务复用SKU，提高GPU的利用率。
 
 <img src="./imgs/sku-xpu.png" width="90%" height="90%" />
 
