@@ -5,11 +5,9 @@
   1. 在OpenPAI的GPU工作节点已经安装了XPU相关软件，如何安装请参考[`XPU安装使用手册`](http://www.xpucube.com/en/pdf/xpu-docker-user-guide.pdf)。
   2. 在OpenPAI安装时将XPU组件启用（默认已经启用）。
 
-正确设置存储后，用户可以将这些PV/PVC装载进其任务中。 在PAI中，存储的名称就是PVC的名称。
-
 ## 在安装OpenPAI时启用XPU
 
-In OpenPAI v1.8.2 or later, 管理员可以在安装OpenPAI的同时启用XPU相关功能：在config.yaml文件中设置enable_xpu: "true"。
+在OpenPAI v1.8.2及以后版本, 管理员可以在安装OpenPAI的同时启用XPU相关功能：在config.yaml文件中设置enable_xpu: "true"。
 
 ### config.yaml 示例
 
