@@ -75,7 +75,7 @@ If you use modern editors like VS Code. It is highly recommends to install [esli
 
 ## Webportal Plugins
 
-Webportal supports custom plugins for extension. Please refer to [here](https://openpai.readthedocs.io/en/latest/manual/cluster-admin/how-to-customize-cluster-by-plugins.html) for more details.
+Webportal supports custom plugins for extension. Please refer to [here](https://github.com/openxpu/pai/blob/master/docs/manual/cluster-admin/how-to-customize-cluster-by-plugins.md) for more details.
 
 ## How to contribute
 

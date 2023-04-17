@@ -113,6 +113,7 @@ export const HivedSkuSection = React.memo(props => {
                 selectedKey={skuPercent}
                 disabled={!isSingle}
                 errorMessage={!isSingle ? 'The vGPU function for Distributed Tasks will be available shortly.' : null}
+		title='Please note: Assign a "Weight" to a vGPU under XPU Express will not work.'
               />
             </Stack.Item>
           </Stack>
