@@ -2,75 +2,89 @@
 
 [logo]: ./pailogo.jpg "OpenPAI"
 
+<h3 align="center">
+  <p>
+    <b>English</b> |
+    <a href="./README_zh_CN.md">简体中文</a>
+  <p>
+</h3>
+
 **As of December 2022, Microsoft, the initial developer, announced that they would no longer develop and maintain the OpenPAI platform. Nevertheless, OpenXPU will resume the development of new features, fix any errors if necessary and maintain the OpenPAI platform from this point onward.**
 
-With the release of v1.x, OpenPAI is becoming more and more modular so that the platform can be easily customized and expanded to suit new needs. OpenPAI also provides many AI user-friendly features, making it easier for end users and administrators to complete daily AI tasks.
+<table>
+  <tr>
+    <td align="center">
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <br/>
+      <a href="https://github.com/openxpu/openpaimarketplace" target="_blank">
+        <img src="./docs/images/architecture/Picture1.svg" width="610" alt="Marketplace Logo" />
+      </a>
+      <br/>
+      <img src="./docs/images/architecture/Picture2.svg" width="200" alt=" Web Portal" />
+      <a href="https://github.com/openxpu/openpaisdk" target="_blank">
+        <img src="./docs/images/architecture/Picture3.svg" width="200" alt="VScode" />
+      </a>
+      <a href="https://github.com/openxpu/openpaivscode" target="_blank">
+        <img src="./docs/images/architecture/Picture4.svg" width="200" alt="SDK" />
+      </a>
+      <br/>
+      <img src="./docs/images/architecture/Picture5.svg" width="610" alt="API" />
+      <br/>
+      <img src="./docs/images/architecture/Picture18.svg" width="610" alt="Services" />
+      <br/>
+      <img src="./docs/images/architecture/Picture19.svg" width="304" alt="User Authentication" />
+      <img src="./docs/images/architecture/Picture20.svg" width="304" alt="User/Group Management" />
+      <br/>
+      <img src="./docs/images/architecture/Picture21.svg" width="304" alt="Storage Management" />
+      <img src="./docs/images/architecture/Picture22.svg" width="304" alt="Cluster/Job Monitoring" />
+      <br/>
+      <a href="https://github.com/openxpu/frameworkcontroller" target="_blank">
+        <img src="./docs/images/architecture/Picture23.svg" width="304" alt="Job Orchestration" />
+      </a>
+      <a href="https://github.com/openxpu/hivedscheduler" target="_blank">
+        <img src="./docs/images/architecture/Picture24.svg" width="304" alt="Job Scheduling" />
+      </a>
+      <br/>
+      <a href="https://github.com/openxpu/openpai-runtime" target="_blank">
+        <img src="./docs/images/architecture/Picture25.svg" width="304" alt="Job Runtime" />
+      </a>
+      <img src="./docs/images/architecture/Picture26.svg" width="304" alt="Job Error Analysis" />
+      <br/>
+      <img src="./docs/images/architecture/Picture15.svg" width="610" alt="Kubernetes Cluster Management" />
+      <br/>
+      <img src="./docs/images/architecture/Picture16.svg" width="610" alt="CPU/GPU/FPGA/InfiniBand" />
+    </td>
+  </tr>
+</table><br>
 
- <table>
-   <tr>
-      <td align="center">
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <br/>
-        <a href="https://github.com/openxpu/openpaimarketplace" target="_blank">
-          <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture1.svg" width="610" alt="Marketplace Logo" />
-        </a>
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture2.svg" width="200" alt=" Web Portal" />
-        <a href="https://github.com/openxpu/openpaisdk" target="_blank">
-          <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture3.svg" width="200" alt="VScode" />
-        </a>
-        <a href="https://github.com/openxpu/openpaivscode" target="_blank">
-          <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture4.svg" width="200" alt="SDK" />
-        </a>
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture5.svg" width="610" alt="API" />
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture18.svg" width="610" alt="Services" />
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture19.svg" width="304" alt="User Authentication" />
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture20.svg" width="304" alt="User/Group Management" />
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture21.svg" width="304" alt="Storage Management" />
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture22.svg" width="304" alt="Cluster/Job Monitoring" />
-        <br/>
-        <a href="https://github.com/openxpu/frameworkcontroller" target="_blank">
-          <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture23.svg" width="304" alt="Job Orchestration" />
-        </a>
-        <a href="https://github.com/openxpu/hivedscheduler" target="_blank">
-          <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture24.svg" width="304" alt="Job Scheduling" />
-        </a>
-        <br/>
-        <a href="https://github.com/openxpu/openpai-runtime" target="_blank">
-          <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture25.svg" width="304" alt="Job Runtime" />
-        </a>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture26.svg" width="304" alt="Job Error Analysis" />
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture15.svg" width="610" alt="Kubernetes Cluster Management" />
-        <br/>
-        <img src="https://openpai.readthedocs.io/en/latest/images/architecture/Picture16.svg" width="610" alt="CPU/GPU/FPGA/InfiniBand" />
-     </td>
-   </tr>
- </table>
+<h3>
+  <p><b>If you are looking for custom support from the OpenXPU team</b><p>
+</h3>
 
-## Table of Contents
+<a target="_blank" href="http://xpucube.com/openpai">
+    <img alt="OpenXPU Support Program" src="http://xpucube.com/images/openxpu-support-en.png" style="max-width: 600px; border: 1px solid #eee; border-radius: 4px; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
+</a><br>
+
+<h3>
+  <p><b>Table of Contents</b><p>
+</h3>
 
 - [Open Platform for AI (OpenPAI) ](#open-platform-for-ai-openpai-)
-  - [Table of Contents](#table-of-contents)
   - [When to consider OpenPAI](#when-to-consider-openpai)
   - [Why choose OpenPAI](#why-choose-openpai)
+      - [Most complete solution and easy to extend](#most-complete-solution-and-easy-to-extend)
       - [Support on-premises and easy to deploy](#support-on-premises-and-easy-to-deploy)
       - [Support popular AI frameworks and heterogeneous hardware](#support-popular-ai-frameworks-and-heterogeneous-hardware)
-      - [Most complete solution and easy to extend](#most-complete-solution-and-easy-to-extend)
-  - [Get started](#get-started)
+      - [Virtualization improves efficiency and flexibility](#virtualization-improves-efficiency-and-flexibility)
+  - [Installation and user guide](#installation-and-user-guide)
     - [For cluster administrators](#for-cluster-administrators)
     - [For cluster users](#for-cluster-users)
   - [Standalone Components](#standalone-components)
-  - [Reference](#reference)
+  - [OpenPAI Manual](#openpai-manual)
   - [Related Projects](#related-projects)
   - [Get involved](#get-involved)
   - [How to contribute](#how-to-contribute)
     - [Contributor License Agreement](#contributor-license-agreement)
-    - [Call for contribution](#call-for-contribution)
     - [Contributors](#contributors)
 
 ## When to consider OpenPAI
@@ -85,6 +99,10 @@ With the release of v1.x, OpenPAI is becoming more and more modular so that the 
 
 The platform incorporates the mature design that has a proven track record in Microsoft's large-scale production environment, And OpenXPU improves OpenPAI with resource (GPU) virtualization capabilities.
 
+#### Most complete solution and easy to extend
+
+OpenPAI is a most complete solution for deep learning, support virtual cluster, compatible with Kubernetes eco-system, complete training pipeline at one cluster etc. OpenPAI is architected in a modular way: different module can be plugged in as appropriate. [Here](./docs/system_architecture.md) is the architecture of OpenPAI, highlighting technical innovations of the platform.
+
 #### Support on-premises and easy to deploy
 
 OpenPAI is a full stack solution. OpenPAI not only supports on-premises, hybrid, or public Cloud deployment but also supports single-box deployment for trial users.
@@ -93,11 +111,11 @@ OpenPAI is a full stack solution. OpenPAI not only supports on-premises, hybrid,
 
 Pre-built container for popular AI frameworks. Easy to include heterogeneous hardware. Support Distributed training, such as distributed TensorFlow.
 
-#### Most complete solution and easy to extend
+#### Virtualization improves efficiency and flexibility
+ 
+[XPU](http://xpucube.com/xpu) is a container-based GPU virtualization product that splits GPUs Dynamically and Fully On Demand at the OS Kernel Layer. OpenPAI can work smoothly with XPU technology, which not only improves the efficiency of computing resources, but also provides more flexible scheduling capabilities and higher task throughput.
 
-OpenPAI is a most complete solution for deep learning, support virtual cluster, compatible with Kubernetes eco-system, complete training pipeline at one cluster etc. OpenPAI is architected in a modular way: different module can be plugged in as appropriate. [Here](./docs/system_architecture.md) is the architecture of OpenPAI, highlighting technical innovations of the platform.
-
-## Get started
+## Installation and user guide
 
 OpenPAI manages computing resources and is optimized for deep learning. Through container technology, the computing hardware are decoupled with software, so that it's easy to run distributed jobs, switch with different deep learning frameworks, or run other kinds of jobs on consistent environments.
 
@@ -150,8 +168,8 @@ OpenPAI uses a  modularized component design and organizes the code structure to
 - [openpaimarketplace](https://github.com/openxpu/openpaimarketplace) is a service which stores examples and job templates. Users can use it from webportal plugin to share their jobs or run-and-learn others' sharing job.
 - [openpaivscode](https://github.com/openxpu/openpaivscode) is a VSCode extension, which makes users connect OpenPAI clusters, submit AI jobs, simulate jobs locally and manage files in VSCode easily.
 
-## Reference
-- Detailed documents could be found [here](./docs) if you are curious.
+## OpenPAI Manual
+- Detailed documents could be found in the [OpenPAI Manual](./docs) if you are interested.
 
 ## Related Projects
 
@@ -183,10 +201,6 @@ provided by the bot. You will only need to do this once across all repos using t
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-### Call for contribution
-
-We are working on a set of major features improvement and refactor, anyone who is familiar with the features is encouraged to join the design review and discussion in the corresponding issue ticket.
 
 ### Contributors
 
