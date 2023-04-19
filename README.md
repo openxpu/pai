@@ -5,7 +5,7 @@
 <h3 align="center">
   <p>
     <b>English</b> |
-    <a href="./README_zh-CN.md">简体中文</a>
+    <a href="./README_zh_CN.md">简体中文</a>
   <p>
 </h3>
 

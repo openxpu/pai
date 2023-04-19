@@ -127,33 +127,33 @@ OpenPAI 为集群用户和管理员提供端到端的手册。
 
 ### 面向 OpenPAI 管理员
 
-[管理员手册](./docs_zh-CN/manual/cluster-admin/README.md) 是一本集群管理员的综合指南，涵盖（但不限于）以下内容：
+[管理员手册](./docs_zh_CN/manual/cluster-admin/README.md) 是一本集群管理员的综合指南，涵盖（但不限于）以下内容：
 
-- **安装与升级**. 安装基于 Kubespray，OpenPAI 提供了 [安装指南](./docs_zh-CN/manual/cluster-admin/installation-guide.md) 方便安装。
+- **安装与升级**. 安装基于 Kubespray，OpenPAI 提供了 [安装指南](./docs_zh_CN/manual/cluster-admin/installation-guide.md) 方便安装。
 
-  如果您正在考虑从旧版本升级到最新版本，请参考 [升级指南](./docs_zh-CN/manual/cluster-admin/upgrade-guide.md).
+  如果您正在考虑从旧版本升级到最新版本，请参考 [升级指南](./docs_zh_CN/manual/cluster-admin/upgrade-guide.md).
 
-  _如果在部署过程中有任何问题，请先查看 [安装常见问题解答及故障排除](./docs_zh-CN/manual/cluster-admin/installation-faqs-and-troubleshooting.md). 如果尚未涵盖，请参阅 [这里](#get-involved) 提出或提交问题。_
+  _如果在部署过程中有任何问题，请先查看 [安装常见问题解答及故障排除](./docs_zh_CN/manual/cluster-admin/installation-faqs-and-troubleshooting.md). 如果尚未涵盖，请参阅 [这里](#get-involved) 提出或提交问题。_
 
-- **基础管理**. 通过Web-portal和命令行工具 `paictl`, 管理员可以完成 [集群管理](./docs_zh-CN/manual/cluster-admin/basic-management-operations.md), 比如 [添加（或删除）节点](./docs_zh-CN/manual/cluster-admin/how-to-add-and-remove-nodes.md), [监控节点和服务](./docs_zh-CN/manual/cluster-admin/basic-management-operations.md), 以及 [存储设置和权限控制](./docs_zh-CN/manual/cluster-admin/how-to-set-up-storage.md).
+- **基础管理**. 通过Web-portal和命令行工具 `paictl`, 管理员可以完成 [集群管理](./docs_zh_CN/manual/cluster-admin/basic-management-operations.md), 比如 [添加（或删除）节点](./docs_zh_CN/manual/cluster-admin/how-to-add-and-remove-nodes.md), [监控节点和服务](./docs_zh_CN/manual/cluster-admin/basic-management-operations.md), 以及 [存储设置和权限控制](./docs_zh_CN/manual/cluster-admin/how-to-set-up-storage.md).
 
-- **用户与组管理**. 管理员可以轻松管理 [用户和组](./docs_zh-CN/manual/cluster-admin/how-to-manage-users-and-groups.md)。
+- **用户与组管理**. 管理员可以轻松管理 [用户和组](./docs_zh_CN/manual/cluster-admin/how-to-manage-users-and-groups.md)。
 
-- **告警管理**. 管理员可以 [自定义警报规则和操作](./docs_zh-CN/manual/cluster-admin/how-to-use-alert-system.md).
+- **告警管理**. 管理员可以 [自定义警报规则和操作](./docs_zh_CN/manual/cluster-admin/how-to-use-alert-system.md).
 
-- **定制化**. 管理员可以通过 [插件](./docs_zh-CN/manual/cluster-admin/how-to-customize-cluster-by-plugins.md). 管理员还可以升级(或降级) 单个组件 (比如 rest servers) 以满足定制的应用程序需求。
+- **定制化**. 管理员可以通过 [插件](./docs_zh_CN/manual/cluster-admin/how-to-customize-cluster-by-plugins.md). 管理员还可以升级(或降级) 单个组件 (比如 rest servers) 以满足定制的应用程序需求。
 
 ### 对于 OpenPAI 使用用户
 
-[用户手册](./docs_zh-CN/manual/cluster-user/README.md) 是集群用户的指南，他们可以在 OpenPAI 上训练和服务深度学习（和其他）任务。
+[用户手册](./docs_zh_CN/manual/cluster-user/README.md) 是集群用户的指南，他们可以在 OpenPAI 上训练和服务深度学习（和其他）任务。
 
-- **作业提交和监控**. [快速入门教程](./docs_zh-CN/manual/cluster-user/quick-start.md) 是学习如何在 OpenPAI 上训练模型的良好开端。更多的示例和对多个主流框架（开箱即用的 docker 镜像）的支持都在 [这里](./docs_zh-CN/manual/cluster-user/docker-images-and-job-examples.md). OpenPAI 还支持 [调试](./docs_zh-CN/manual/cluster-user/how-to-debug-jobs.md) 和 [高级作业功能](./docs_zh-CN/manual/cluster-user/how-to-use-advanced-job-settings.md).
+- **作业提交和监控**. [快速入门教程](./docs_zh_CN/manual/cluster-user/quick-start.md) 是学习如何在 OpenPAI 上训练模型的良好开端。更多的示例和对多个主流框架（开箱即用的 docker 镜像）的支持都在 [这里](./docs_zh_CN/manual/cluster-user/docker-images-and-job-examples.md). OpenPAI 还支持 [调试](./docs_zh_CN/manual/cluster-user/how-to-debug-jobs.md) 和 [高级作业功能](./docs_zh_CN/manual/cluster-user/how-to-use-advanced-job-settings.md).
 
-- **数据管理**. 用户可以在他们的工作中使用集群配置的存储和自定义存储。集群配置的存储集成良好，易于在作业中配置 [这里](./docs_zh-CN/manual/cluster-user/how-to-manage-data.md).
+- **数据管理**. 用户可以在他们的工作中使用集群配置的存储和自定义存储。集群配置的存储集成良好，易于在作业中配置 [这里](./docs_zh_CN/manual/cluster-user/how-to-manage-data.md).
 
-- **协作与共享**. OpenPAI 为团队和组织中的协作提供便利。集群配置的存储按团队（组）组织。并且用户可以轻松地在 [marketplace](./docs_zh-CN/manual/cluster-user/use-marketplace.md) 分享他们的作品（例如工作） ，其他人可以通过单击来发现和复制（克隆）。
+- **协作与共享**. OpenPAI 为团队和组织中的协作提供便利。集群配置的存储按团队（组）组织。并且用户可以轻松地在 [marketplace](./docs_zh_CN/manual/cluster-user/use-marketplace.md) 分享他们的作品（例如工作） ，其他人可以通过单击来发现和复制（克隆）。
 
-除了 webportal，OpenPAI 还提供 [VS Code 扩展](./docs_zh-CN/manual/cluster-user/use-vscode-extension.md) 和 [命令行工具 (预览)](https://github.com/openxpu/openpaisdk). VS Code 扩展是一个友好的、基于 GUI 的 OpenPAI 客户端工具，强烈推荐使用。它是 Visual Studio Code 的扩展。它可以提交作业、在本地模拟作业、管理多个 OpenPAI 环境等。
+除了 webportal，OpenPAI 还提供 [VS Code 扩展](./docs_zh_CN/manual/cluster-user/use-vscode-extension.md) 和 [命令行工具 (预览)](https://github.com/openxpu/openpaisdk). VS Code 扩展是一个友好的、基于 GUI 的 OpenPAI 客户端工具，强烈推荐使用。它是 Visual Studio Code 的扩展。它可以提交作业、在本地模拟作业、管理多个 OpenPAI 环境等。
 
 ## OpenPAI 组件
 
@@ -169,7 +169,7 @@ OpenPAI 使用模块化组件设计，并将代码结构组织为 1 个主仓库
 
 ## OpenPAI 手册
 
-- 如果您需要，请参阅 OpenPai 手册。 [here](./docs_zh-CN)
+- 如果您需要，请参阅 OpenPai 手册。 [here](./docs_zh_CN)
 
 ## 参与 OpenPAI 讨论
 
