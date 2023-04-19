@@ -113,7 +113,7 @@ Pre-built container for popular AI frameworks. Easy to include heterogeneous har
 
 #### Virtualization improves efficiency and flexibility
  
-GPU virtualization technology supports fine-grained computing power scheduling, which not only improves the efficiency of computing resources, but also provides more flexible scheduling capabilities and higher task throughput.
+[XPU](http://xpucube.com/xpu) is a container-based GPU virtualization product that splits GPUs Dynamically and Fully On Demand at the OS Kernel Layer. OpenPAI can work smoothly with XPU technology, which not only improves the efficiency of computing resources, but also provides more flexible scheduling capabilities and higher task throughput.
 
 ## Installation and user guide
 
