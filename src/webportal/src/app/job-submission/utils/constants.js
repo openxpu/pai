@@ -85,28 +85,28 @@ export const PAI_ENV_VAR = [
 ];
 export const PROTOCOL_TOOLTIPS = {
   taskRoleContainerSize:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/quick-start.md',
   hivedSkuType:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/quick-start.md',
   taskRole:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-run-distributed-job.html#taskrole-and-instance',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-run-distributed-job.md#taskrole-and-instance',
   parameters:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#parameters-and-secrets',
-  secrets: `https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#parameters-and-secrets`,
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-use-advanced-job-settings.md#parameters-and-secrets',
+  secrets: `https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-use-advanced-job-settings.md#parameters-and-secrets`,
   data:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-manage-data.html',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-manage-data.md',
   tools:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-debug-jobs',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-debug-jobs.md#how-to-debug-jobs',
   dockerImage:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/docker-images-and-job-examples.html',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/docker-images-and-job-examples.md',
   teamStorage:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-manage-data.html#use-storage-in-jobs',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-manage-data.md#use-storage-in-jobs',
   tensorboard:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-use-tensorboard-plugin',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-debug-jobs.md#how-to-use-tensorboard-plugin',
   ssh:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-debug-jobs.html#how-to-use-ssh',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-debug-jobs.md#how-to-use-ssh',
   policy:
-    'https://openpai.readthedocs.io/en/latest/manual/cluster-user/how-to-use-advanced-job-settings.html#job-exit-spec-retry-policy-and-completion-policy',
+    'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/how-to-use-advanced-job-settings.md#job-exit-spec-retry-policy-and-completion-policy',
 };
 
 export const COMMAND_PLACEHOLDER = `'You could define your own Parameters, Secrets or Data mount point on the right sidebar.

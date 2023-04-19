@@ -54,7 +54,7 @@ export const Topbar = React.memo(
           </Text>
           <Link
             target='_blank'
-            href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/quick-start.html'
+            href='https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/quick-start.md'
             style={{ fontWeight: FontWeights.semibold }}
           >
             {'Learn more >'}

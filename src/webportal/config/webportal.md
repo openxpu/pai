@@ -20,7 +20,7 @@ webportal:
     server-port: new-value
 ```
 
-About config the web portal plugin, see [here](https://openpai.readthedocs.io/en/latest/manual/cluster-admin/how-to-customize-cluster-by-plugins.html)
+About config the web portal plugin, see [here](https://github.com/openxpu/pai/blob/master/docs/manual/cluster-admin/how-to-customize-cluster-by-plugins.md)
 
 ## Generated Configuration <a name="G_Config"></a>
 

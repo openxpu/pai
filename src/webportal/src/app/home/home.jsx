@@ -175,7 +175,7 @@ const Home = () => {
                 <Stack horizontal>
                   <TooltipIcon
                     content={
-                      'https://openpai.readthedocs.io/en/latest/manual/cluster-admin/basic-management-operations.html#abnormal-jobs'
+                      'https://github.com/openxpu/pai/blob/master/docs/manual/cluster-admin/basic-management-operations.md#abnormal-jobs'
                     }
                   />
                   <StackItem grow className={c(t.w100)}>
