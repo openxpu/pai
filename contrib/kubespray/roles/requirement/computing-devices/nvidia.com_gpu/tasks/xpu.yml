@@ -1,0 +1,16 @@
+- name: "Check XPU with command"
+  raw: "command -v xpu-container-runtime "
+  register: xpu_container_runtime
+  failed_when: false
+  changed_when: false
+  check_mode: false
+  environment: {}
+
+- name: "Check XPU is installed or not"
+  set_fact:
+          unmet_requirements: "{{ unmet_requirements + ['XPU packages is not detected. Refer to http://www.xpucube.com/en/pdf/xpu-docker-user-guide.pdf to install.'] }}"
+  changed_when: false
+  check_mode: false
+  environment: {}
+  when:
+    - xpu_container_runtime.rc != 0
