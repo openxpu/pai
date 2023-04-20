@@ -58,3 +58,6 @@
 
 - name: "Check default docker runtime"
   include_tasks: docker-runtime.yml
+
+- name: "Check XPU packages"
+  include_tasks: xpu.yml

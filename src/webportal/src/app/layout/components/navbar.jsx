@@ -90,7 +90,7 @@ const Navbar = ({ onToggleSidebar, mobile, userInfo }) => {
         </CustomButton>
         <CustomButton
           key='help'
-          href='https://openpai.readthedocs.io/en/latest/manual/cluster-user/README.html'
+          href='https://github.com/openxpu/pai/blob/master/docs/manual/cluster-user/README.md'
           iconProps={{ iconName: 'Help' }}
           style={{
             textDecoration: 'none',
