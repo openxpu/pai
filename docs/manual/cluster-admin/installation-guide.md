@@ -163,7 +163,7 @@ cd pai
 Choose a version to install by checkout to a specific tag:
 
 ```bash
-git checkout v1.8.2
+git checkout -b v1.8.2
 ```
 
 Please edit `layout.yaml` and a `config.yaml` file under `<pai-code-dir>/contrib/kubespray/config` folder.
