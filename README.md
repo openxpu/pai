@@ -9,7 +9,7 @@
   <p>
 </h3>
 
-**As of December 2022, Microsoft, the initial developer, announced that they would no longer develop and maintain the OpenPAI platform. Nevertheless, OpenXPU will resume the development of new features, fix any errors if necessary and maintain the OpenPAI platform from this point onward.**
+**As of December 2022, Microsoft, the initial developer, announced that they would no longer develop and maintain the OpenPAI platform. Nevertheless, OpenXPU will resume the development of new features, fix any errors if necessary and maintain the OpenPAI platform from this point onward. ikanaide**
 
 <table>
   <tr>
