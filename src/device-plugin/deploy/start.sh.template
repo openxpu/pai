@@ -39,7 +39,8 @@ curl "http://down.openxpu.com/openpai/NVIDIA/k8s-device-plugin/1.0.0-beta4/nvidi
 # Begin: AMD GPU device plugin
 {% if 'amd.com/gpu' in cluster_cfg['device-plugin']['devices'] %}
 
-svn cat https://github.com/RadeonOpenCompute/k8s-device-plugin.git/trunk/k8s-ds-amdgpu-dp.yaml \
+#svn cat https://github.com/RadeonOpenCompute/k8s-device-plugin.git/trunk/k8s-ds-amdgpu-dp.yaml \
+svn cat https://github.com/RadeonOpenCompute/k8s-device-plugin/blob/master/k8s-ds-amdgpu-dp.yaml \
     | kubectl apply --overwrite=true -f - || exit $?
 
 {% endif %}
